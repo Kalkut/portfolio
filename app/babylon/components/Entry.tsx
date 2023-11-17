@@ -25,7 +25,7 @@ export function Entry({
 
   useEffect(() => {
     const isImg = type === "image";
-    const _texture = isImg ? new Texture(preview, scene) : new VideoTexture("Video preview", preview, scene);
+    const _texture = isImg ? new Texture(preview, scene) : new VideoTexture("Video preview", preview, scene,undefined,false,undefined,{ muted: true});
     _texture.onLoadObservable.addOnce(() => {
       setTexture(_texture);
     });

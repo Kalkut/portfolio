@@ -18,10 +18,34 @@ export default function Home() {
       rotation={new Vector3(0, Math.PI / 2)}
     />
     <Entry
+      type='video'
+      preview='/videos/dialog_editor.mp4'
+      position={new Vector3(-2, 2, 2)}
+    />
+    <Entry
+      type='video'
+      preview="/videos/environment.mp4"
+      position={new Vector3(0, 2, 2)}
+    />
+    <Entry
+      type='video'
+      preview="/videos/house_builder.mp4"
+      position={new Vector3(2, 2, 2)}
+    />
+    <Entry
+      type='video'
+      preview='/videos/ground.mp4'
+      position={new Vector3(-2.2, 3.25, 2)}
+    />
+    <Entry
       type='image'
       preview="/pictures/social.jpg"
-      position={new Vector3(0, 2, 2)}
-      // rotation={new Vector3(0, 0, 0)}
+      position={new Vector3(0, 3.25, 2)}
+    />
+    <Entry
+      type='video'
+      preview='/videos/reddit.mp4'
+      position={new Vector3(2.2, 3.25, 2)}
     />
   </App>;
 }
