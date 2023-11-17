@@ -9,15 +9,30 @@ import { SceneContext } from "../App";
 
 export function Entry({
   preview,
+  type,
   position = Vector3.ZeroReadOnly,
   rotation = Vector3.ZeroReadOnly,
 }: {
   preview: string;
+  type: "image" | "video"
   position?: Vector3;
   rotation?: Vector3;
 }) {
   const [mesh, setMesh] = useState<Mesh>();
   const scene = useContext(SceneContext);
+
+  useEffect(() => {
+    const material = new StandardMaterial("Entry", scene);
+    if(type === "image") {
+      const texture = new Texture(preview, scene);
+      material.diffuseTexture = texture;
+      material.emissiveTexture = texture;
+      texture.onLoadObservable.addOnce(() => {
+        const size = texture.getSize();
+        console.log(size, "size");
+      });
+    }
+  }, [preview, type, scene]);
 
   useEffect(() => {
     const _mesh = MeshBuilder.CreatePlane("entry", {}, scene);

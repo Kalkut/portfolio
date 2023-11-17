@@ -8,7 +8,7 @@ export function Camera() {
   const scene = useContext(SceneContext);
 
   useEffect(() => {
-    const camera = new ArcRotateCamera("arcCamera", -Math.PI / 2, Math.PI / 4, 5, Vector3.UpReadOnly, scene);
+    const camera = new ArcRotateCamera("arcCamera", -Math.PI / 2, 0.75 * Math.PI / 2, 5, Vector3.UpReadOnly, scene);
     camera.attachControl();
     camera.lowerRadiusLimit = 5;
     camera.upperRadiusLimit = 10;

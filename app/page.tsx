@@ -13,13 +13,14 @@ export default function Home() {
   return <App>
     <Camera />
     <Lights />
-    <DefaultEnvironment color="#d9f99d"/>
+    <DefaultEnvironment color="#1e3a8a"/>
     <Model url="/models/desk.glb"
-      // rotation={new Vector3(0, Math.PI / 2)}
+      rotation={new Vector3(0, Math.PI / 2)}
     />
     <Entry
-      preview="/pictures/loreal.jpeg"
-      // position={new Vector3(0, 2, 2)}
+      type='image'
+      preview="/pictures/social.jpg"
+      position={new Vector3(0, 2, 2)}
       // rotation={new Vector3(0, 0, 0)}
     />
   </App>;
