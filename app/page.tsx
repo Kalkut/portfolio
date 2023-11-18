@@ -5,7 +5,7 @@ import { Camera } from './babylon/Camera';
 import { Lights } from './babylon/Lights';
 import { DefaultEnvironment } from './babylon/DefaultEnvironment';
 import { Model } from './babylon/Model';
-import { Entry } from './babylon/components/Entry';
+import { Card } from './babylon/components/Card';
 import { Vector3 } from '@babylonjs/core/Maths/math.vector';
 
 export default function Home() {
@@ -17,32 +17,32 @@ export default function Home() {
     <Model url="/models/desk.glb"
       rotation={new Vector3(0, Math.PI / 2)}
     />
-    <Entry
+    <Card
       type='video'
       preview='/videos/dialog_editor.mp4'
       position={new Vector3(-2, 2, 2)}
     />
-    <Entry
+    <Card
       type='video'
       preview="/videos/environment.mp4"
       position={new Vector3(0, 2, 2)}
     />
-    <Entry
+    <Card
       type='video'
       preview="/videos/house_builder.mp4"
       position={new Vector3(2, 2, 2)}
     />
-    <Entry
+    <Card
       type='video'
       preview='/videos/ground.mp4'
       position={new Vector3(-2.2, 3.25, 2)}
     />
-    <Entry
+    <Card
       type='image'
       preview="/pictures/social.jpg"
       position={new Vector3(0, 3.25, 2)}
     />
-    <Entry
+    <Card
       type='video'
       preview='/videos/reddit.mp4'
       position={new Vector3(2.2, 3.25, 2)}

@@ -10,7 +10,7 @@ import { VideoTexture } from "@babylonjs/core/Materials/Textures/videoTexture";
 import { ActionManager } from "@babylonjs/core/Actions/actionManager";
 import { ExecuteCodeAction } from "@babylonjs/core";
 
-export function Entry({
+export function Card({
   preview,
   type,
   position = Vector3.ZeroReadOnly,
@@ -46,8 +46,8 @@ export function Entry({
     const size = texture.getSize();
     console.log(size, "size", texture);
     const width = size.width / size.height;
-    const _mesh = MeshBuilder.CreatePlane("entry", { width, height: 1}, scene);
-    const material = new StandardMaterial("Entry", scene);
+    const _mesh = MeshBuilder.CreatePlane("Card", { width, height: 1}, scene);
+    const material = new StandardMaterial("Card", scene);
     material.diffuseTexture = texture;
     material.emissiveTexture = texture;
     
