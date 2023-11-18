@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -15,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='h-screen w-screen'>
-      <body className={`${inter.className} w-full h-full`}>{children}</body>
+    <html lang="en" className={GeistSans.className}>
+      <body className='h-screen w-screen'>{children}</body>
     </html>
   )
 }

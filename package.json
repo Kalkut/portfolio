@@ -12,6 +12,7 @@
     "@babylonjs/core": "^6.30.0",
     "@babylonjs/inspector": "^6.30.0",
     "@babylonjs/loaders": "^6.30.0",
+    "geist": "^1.1.0",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18"
