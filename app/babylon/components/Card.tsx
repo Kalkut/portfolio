@@ -8,7 +8,13 @@ import { useContext, useEffect, useState } from "react";
 import { SceneContext } from "../App";
 import { VideoTexture } from "@babylonjs/core/Materials/Textures/videoTexture";
 import { ActionManager } from "@babylonjs/core/Actions/actionManager";
-import { CombineAction, ExecuteCodeAction, InterpolateValueAction, Scene } from "@babylonjs/core";
+import { Scene } from "@babylonjs/core/scene";
+import { CombineAction } from "@babylonjs/core/Actions/directActions";
+import { ExecuteCodeAction } from "@babylonjs/core/Actions/directActions";
+import { InterpolateValueAction } from "@babylonjs/core/Actions/interpolateValueAction";
+import { AdvancedDynamicTexture } from "@babylonjs/gui/2D/advancedDynamicTexture";
+import { TextBlock } from "@babylonjs/gui/2D/controls/textBlock";
+import {Rectangle} from "@babylonjs/gui/2D/controls/rectangle";
 
 export function Card({
   preview,
@@ -49,11 +55,12 @@ export function Card({
     const _backdrop = createBackdropMesh(texture, scene);
     _backdrop.setParent(_mesh);
     _backdrop.position.z = -0.001
-    makeCardHoverable(_mesh, _backdrop, scene);
+    makeCardHoverable(_backdrop, scene);
     setMesh(_mesh);
 
     return () => {
       _mesh.dispose();
+      _backdrop.dispose()
     }
   }, [scene, texture]);
 
@@ -81,10 +88,21 @@ function createCardMesh(texture: Texture, scene: Scene) {
 
 function createBackdropMesh(texture: Texture, scene: Scene) {
   const backdrop = fromTextureToPlane(texture, scene);
-  const material = new StandardMaterial("Card Backdrop", scene);
-  material.diffuseColor.set(0,0,0);
-  
-  backdrop.material = material;
+
+  const advancedTexture = AdvancedDynamicTexture.CreateForMesh(backdrop);
+  advancedTexture.background = "black";
+
+  const rectangle = new Rectangle();
+  rectangle.width = "50%";
+  rectangle.height = "50%";
+  rectangle.thickness = 0;
+  advancedTexture.addControl(rectangle);
+
+  const text = new TextBlock();
+  text.text = "Card Name";
+  text.color = "white";
+  text.fontSize = "15%"
+  rectangle.addControl(text);
   backdrop.visibility = 0;
   return backdrop;
 }
@@ -96,17 +114,19 @@ function fromTextureToPlane(texture: Texture, scene: Scene) {
   return mesh;
 }
 
-function makeCardHoverable(mesh: Mesh, backdrop: Mesh, scene: Scene) {
+function makeCardHoverable(backdrop: Mesh, scene: Scene) {
   const addPointer = new ExecuteCodeAction(
     ActionManager.NothingTrigger,
     () => {
-      document.body.classList.add("pointer");
+      console.log("pointer on");
+      document.body.classList.add("cursor-pointer");
     },
   );
   const removePointer = new ExecuteCodeAction(
     ActionManager.NothingTrigger,
     () => {
-      document.body.classList.remove("pointer")
+      console.log("pointer off");
+      document.body.classList.remove("cursor-pointer")
     },
   );
 
@@ -119,5 +139,5 @@ function makeCardHoverable(mesh: Mesh, backdrop: Mesh, scene: Scene) {
   const actionManager = new ActionManager(scene);
   actionManager.registerAction(hover);
   actionManager.registerAction(blur);
-  mesh.actionManager = actionManager;
+  backdrop.actionManager = actionManager;
 }
