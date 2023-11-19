@@ -4,7 +4,7 @@ import { Scene } from "@babylonjs/core/scene";
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { ReactNode, createContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 
-export function App({ children }: { children: ReactNode }) {
+export function Canvas({ children }: { children: ReactNode }) {
   const [scene, setScene] = useState<Scene>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 

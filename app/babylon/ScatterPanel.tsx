@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { SceneContext } from "./App";
+import { SceneContext } from "./Canvas";
 import { TransformNode } from "@babylonjs/core/Meshes/transformNode";
 import { GUI3DManager } from "@babylonjs/gui/3D/gui3DManager";
 import { ScatterPanel as BabylonScatterPaenel } from "@babylonjs/gui/3D/controls/scatterPanel";

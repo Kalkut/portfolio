@@ -4,7 +4,7 @@ import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 import { Texture } from "@babylonjs/core/Materials/Textures/texture";
 import { useContext, useEffect, useReducer } from "react";
-import { SceneContext } from "../App";
+import { SceneContext } from "./Canvas";
 import { VideoTexture } from "@babylonjs/core/Materials/Textures/videoTexture";
 import { ActionManager } from "@babylonjs/core/Actions/actionManager";
 import { Scene } from "@babylonjs/core/scene";

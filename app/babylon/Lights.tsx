@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { SceneContext } from "./App";
+import { SceneContext } from "./Canvas";
 
 export function Lights() {
   const scene = useContext(SceneContext);

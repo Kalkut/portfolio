@@ -1,57 +1,13 @@
-"use client"
-import Image from 'next/image'
-import { App } from './babylon/App';
-import { Camera } from './babylon/Camera';
-import { Lights } from './babylon/Lights';
-import { DefaultEnvironment } from './babylon/DefaultEnvironment';
-import { Model } from './babylon/Model';
-import { Card } from './babylon/components/Card';
-import { Vector3 } from '@babylonjs/core/Maths/math.vector';
+import Office from './babylon/Office';
 
 export default function Home() {
-
-  return <App>
-    <Camera />
-    <Lights />
-    <DefaultEnvironment color="#1e3a8a"/>
-    <Model url="/models/desk.glb"
-      rotation={new Vector3(0, Math.PI / 2)}
-    />
-    <Card
-      type='video'
-      title='NPC Dialog Editor'
-      preview='/videos/dialog_editor.mp4'
-      position={new Vector3(-2, 2, 2)}
-    />
-    <Card
-      type='video'
-      title='WebXR Space Editor'
-      preview="/videos/environment.mp4"
-      position={new Vector3(0, 2, 2)}
-    />
-    <Card
-      type='video'
-      title="Building Editor"
-      preview="/videos/house_builder.mp4"
-      position={new Vector3(2, 2, 2)}
-    />
-    <Card
-      type='video'
-      title='WebVR Environment Editor'
-      preview='/videos/ground.mp4'
-      position={new Vector3(-2.2, 3.25, 2)}
-    />
-    <Card
-      type='image'
-      title="Proto Social WebVR"
-      preview="/pictures/social.jpg"
-      position={new Vector3(0, 3.25, 2)}
-    />
-    <Card
-      type='video'
-      title="WebVR Reddit Browser"
-      preview='/videos/reddit.mp4'
-      position={new Vector3(2.2, 3.25, 2)}
-    />
-  </App>;
+  return (
+    <>
+      <Office />
+      <header className='absolute right-0 bottom-0 pr-4 pb-4 2xl:pr-8 2xl:pb-8'>
+        <h1 className='text-white text-3xl sm:text-4xl 2xl:text-6xl font-bold text-end'>Bérenger Makita</h1>
+        <h2 className='text-end sm:text-2xl 2xl:text-3xl'>Fullstack & 3D/XR Web Development</h2>
+      </header>
+    </>
+  );
 }

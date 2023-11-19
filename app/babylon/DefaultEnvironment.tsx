@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { SceneContext } from "./App";
+import { SceneContext } from "./Canvas";
 import { Color3 } from "@babylonjs/core";
 
 export function DefaultEnvironment({ color }: { color: string }) {
@@ -10,6 +10,8 @@ export function DefaultEnvironment({ color }: { color: string }) {
     const helper = scene.createDefaultEnvironment({
       skyboxColor: color3,
       groundColor: color3,
+      groundSize: 50,
+      skyboxSize: 50
     });
 
     return () => {

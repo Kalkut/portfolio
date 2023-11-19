@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Color4 } from "@babylonjs/core";
-import { SceneContext } from "./App";
+import { SceneContext } from "./Canvas";
 
 export function Background({ color }: { color: string }) {
   const scene = useContext(SceneContext);
