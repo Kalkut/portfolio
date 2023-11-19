@@ -1,4 +1,3 @@
-"use client"
 import { useContext, useEffect } from "react";
 import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";

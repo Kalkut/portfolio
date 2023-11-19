@@ -1,4 +1,3 @@
-"use client"
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
 import {MeshBuilder} from "@babylonjs/core/Meshes/meshBuilder";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
@@ -30,8 +29,6 @@ export function Card({
   rotation?: Vector3;
 }) {
   const [{ texture, textBlock, mesh }, dispatch] = useReducer(reducer, {});
-  // const [texture, setTexture] = useState<Texture>();
-  // const [mesh, setMesh] = useState<Mesh>();
   const scene = useContext(SceneContext);
 
   // Texture Load
@@ -104,14 +101,13 @@ function createBackdropMesh(texture: Texture, scene: Scene) {
 
   const rectangle = new Rectangle();
   rectangle.width = "75%";
-  // rectangle.height = "50%";
   rectangle.thickness = 0;
   advancedTexture.addControl(rectangle);
 
   const textBlock = new TextBlock();
   textBlock.textWrapping = true;
   textBlock.color = "white";
-  textBlock.fontSize = "7%"
+  textBlock.fontSize = "7%";
   rectangle.addControl(textBlock);
   
   return {backdrop, textBlock};
@@ -150,20 +146,9 @@ function makeCardHoverable(backdrop: Mesh, scene: Scene) {
   backdrop.actionManager = actionManager;
 }
 
-type SetTexture = { key: "texture", value: Texture };
-type SetMesh = { key: "mesh", value: Mesh };
-// type SetBackdrop = { key: "backdrop", value: Mesh };
-type SetTextBlock = { key: "textBlock", value: TextBlock };
-
-type Action = SetTexture
-| SetMesh
-// | SetBackdrop
-| SetTextBlock
-
 type CardState = Partial<{
   texture: Texture;
   mesh: Mesh;
-  // backdrop: Mesh;
   textBlock: TextBlock;
 }>;
 

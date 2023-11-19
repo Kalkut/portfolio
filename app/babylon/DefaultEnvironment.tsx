@@ -1,4 +1,3 @@
-"use client"
 import { useContext, useEffect } from "react";
 import { SceneContext } from "./App";
 import { Color3 } from "@babylonjs/core";

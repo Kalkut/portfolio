@@ -1,4 +1,3 @@
-"use client"
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { useContext, useEffect, useState } from "react";
 import { SceneContext } from "./App";
