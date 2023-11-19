@@ -42,8 +42,7 @@ export function Card({
     new VideoTexture("Video preview", preview, scene,undefined,false,undefined,{ muted: true});
 
     _texture.onLoadObservable.addOnce(() => {
-      dispatch({ key: "texture", value: _texture });
-      // setTexture(_texture);
+      dispatch({ texture: _texture });
     });
 
     return () => {
@@ -60,8 +59,7 @@ export function Card({
     _backdrop.setParent(_mesh);
     _backdrop.position.z = -0.001
     makeCardHoverable(_backdrop, scene);
-    // setMesh(_mesh);
-    dispatch([{ key: "mesh", value: _mesh }, { key: "textBlock", value: _textBlock }]);
+    dispatch({ mesh: _mesh, textBlock: _textBlock });
 
     return () => {
       _mesh.dispose();
@@ -140,7 +138,7 @@ function makeCardHoverable(backdrop: Mesh, scene: Scene) {
     },
   );
 
-  const fadeIn = new InterpolateValueAction(ActionManager.NothingTrigger, backdrop, "visibility", 0.8, 200);
+  const fadeIn = new InterpolateValueAction(ActionManager.NothingTrigger, backdrop, "visibility", 0.6, 200);
   const fadeOut = new InterpolateValueAction(ActionManager.NothingTrigger, backdrop, "visibility", 0, 200);
 
   const hover = new CombineAction(ActionManager.OnPointerOverTrigger, [addPointer, fadeIn]);
@@ -169,13 +167,9 @@ type CardState = Partial<{
   textBlock: TextBlock;
 }>;
 
-function reducer(state: CardState, action: Action | Action[]) {
-  const updatedValues: CardState = !Array.isArray(action) ?
-  { [action.key]: action.value } :
-    action.reduce((_state, _action) => ({ ..._state, [_action.key]: _action.value}), {});
-
+function reducer(state: CardState, valuesToUpdate: CardState) {
     return {
     ...state,
-    ...updatedValues
+    ...valuesToUpdate
   }
 }
