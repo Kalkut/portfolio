@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="h-screen w-screen">
+      <body className="h-screen w-screen bg-[#425c87]">
         <Office />
         {children}
       </body>

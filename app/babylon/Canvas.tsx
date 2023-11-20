@@ -3,16 +3,20 @@
 import { Scene } from "@babylonjs/core/scene";
 import { Engine } from "@babylonjs/core/Engines/engine";
 import {
+  Dispatch,
   ReactNode,
+  SetStateAction,
   createContext,
   useEffect,
   useLayoutEffect,
   useRef,
   useState,
 } from "react";
+import clsx from "clsx";
 
 export function Canvas({ children }: { children: ReactNode }) {
   const [scene, setScene] = useState<Scene>();
+  const [ready, setReady] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useLayoutEffect(() => {
@@ -42,10 +46,17 @@ export function Canvas({ children }: { children: ReactNode }) {
     <>
       <canvas ref={canvasRef} className="h-full w-full" />
       {scene && (
-        <SceneContext.Provider value={scene}>{children}</SceneContext.Provider>
+        <SceneContext.Provider value={scene}>
+          <ReadyContext.Provider value={setReady}>
+            {children}
+          </ReadyContext.Provider>
+        </SceneContext.Provider>
       )}
     </>
   );
 }
 
 export const SceneContext = createContext<Scene>({} as Scene);
+export const ReadyContext = createContext<Dispatch<SetStateAction<boolean>>>(
+  () => {},
+);
