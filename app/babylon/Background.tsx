@@ -11,8 +11,7 @@ export function Background({ color }: { color: string }) {
 
     return () => {
       scene.clearColor.copyFrom(initialBackground);
-    }
-
+    };
   }, [scene, color]);
 
   return null;

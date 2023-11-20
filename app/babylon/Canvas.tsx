@@ -1,8 +1,15 @@
-"use client"
+"use client";
 
 import { Scene } from "@babylonjs/core/scene";
 import { Engine } from "@babylonjs/core/Engines/engine";
-import { ReactNode, createContext, useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 export function Canvas({ children }: { children: ReactNode }) {
   const [scene, setScene] = useState<Scene>();
@@ -10,7 +17,7 @@ export function Canvas({ children }: { children: ReactNode }) {
 
   useLayoutEffect(() => {
     const canvas = canvasRef.current;
-    if(!canvas) return;
+    if (!canvas) return;
 
     const engine = new Engine(canvas, true);
     const _scene = new Scene(engine);
@@ -21,7 +28,7 @@ export function Canvas({ children }: { children: ReactNode }) {
     });
 
     const resize = () => engine.resize();
-    window.addEventListener('resize', resize)
+    window.addEventListener("resize", resize);
 
     return () => {
       engine.stopRenderLoop();
@@ -34,7 +41,9 @@ export function Canvas({ children }: { children: ReactNode }) {
   return (
     <>
       <canvas ref={canvasRef} className="h-full w-full" />
-      {scene && <SceneContext.Provider value={scene}>{children}</SceneContext.Provider>}
+      {scene && (
+        <SceneContext.Provider value={scene}>{children}</SceneContext.Provider>
+      )}
     </>
   );
 }

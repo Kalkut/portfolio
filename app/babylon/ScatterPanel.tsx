@@ -20,7 +20,7 @@ export default function ScatterPanel() {
       panel.dispose();
       manager.dispose();
       anchor.dispose();
-    }
+    };
   }, [scene]);
 
   return null;

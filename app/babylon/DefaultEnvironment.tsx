@@ -11,12 +11,12 @@ export function DefaultEnvironment({ color }: { color: string }) {
       skyboxColor: color3,
       groundColor: color3,
       groundSize: 50,
-      skyboxSize: 50
+      skyboxSize: 50,
     });
 
     return () => {
       helper?.dispose();
-    }
+    };
   }, [scene, color]);
 
   return null;

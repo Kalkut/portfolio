@@ -21,29 +21,32 @@ export function Model({
   useEffect(() => {
     loadModel();
 
-    async function loadModel () {
+    async function loadModel() {
       const result = await SceneLoader.ImportMeshAsync("", url, "", scene);
-      const _mesh = result.meshes[0]
-      console.log(result.meshes.map(({ name }) => name), "result");
+      const _mesh = result.meshes[0];
+      console.log(
+        result.meshes.map(({ name }) => name),
+        "result",
+      );
       const bbinfos = result.meshes[0].getHierarchyBoundingVectors(true);
-      _mesh.scaling.scaleInPlace(1.5 / Math.abs(bbinfos.max.y - bbinfos.min.y))
+      _mesh.scaling.scaleInPlace(1.5 / Math.abs(bbinfos.max.y - bbinfos.min.y));
       setMesh(_mesh);
     }
   }, [scene, url]);
 
   // Position update
   useEffect(() => {
-    if(!mesh) return;
+    if (!mesh) return;
 
-    if(position) mesh.position = position;
-    if(rotation) mesh.rotation = rotation;
-  }, [mesh, position, rotation])
+    if (position) mesh.position = position;
+    if (rotation) mesh.rotation = rotation;
+  }, [mesh, position, rotation]);
 
   // On Destroy
   useEffect(() => {
     return () => {
       mesh?.dispose(true, true);
-    }
+    };
   }, [mesh]);
 
   return null;

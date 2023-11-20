@@ -1,5 +1,5 @@
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
-import {MeshBuilder} from "@babylonjs/core/Meshes/meshBuilder";
+import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 import { Texture } from "@babylonjs/core/Materials/Textures/texture";
@@ -13,7 +13,7 @@ import { ExecuteCodeAction } from "@babylonjs/core/Actions/directActions";
 import { InterpolateValueAction } from "@babylonjs/core/Actions/interpolateValueAction";
 import { AdvancedDynamicTexture } from "@babylonjs/gui/2D/advancedDynamicTexture";
 import { TextBlock } from "@babylonjs/gui/2D/controls/textBlock";
-import {Rectangle} from "@babylonjs/gui/2D/controls/rectangle";
+import { Rectangle } from "@babylonjs/gui/2D/controls/rectangle";
 
 export function Card({
   title,
@@ -24,7 +24,7 @@ export function Card({
 }: {
   title: string;
   preview: string;
-  type: "image" | "video"
+  type: "image" | "video";
   position?: Vector3;
   rotation?: Vector3;
 }) {
@@ -34,9 +34,17 @@ export function Card({
   // Texture Load
   useEffect(() => {
     const isImg = type === "image";
-    const _texture = isImg ?
-    new Texture(preview, scene) :
-    new VideoTexture("Video preview", preview, scene,undefined,false,undefined,{ muted: true});
+    const _texture = isImg
+      ? new Texture(preview, scene)
+      : new VideoTexture(
+          "Video preview",
+          preview,
+          scene,
+          undefined,
+          false,
+          undefined,
+          { muted: true },
+        );
 
     _texture.onLoadObservable.addOnce(() => {
       dispatch({ texture: _texture });
@@ -44,40 +52,42 @@ export function Card({
 
     return () => {
       _texture.dispose();
-    }
+    };
   }, [preview, type, scene]);
 
   // Card Setup
   useEffect(() => {
-    if(!texture) return;
-    
+    if (!texture) return;
+
     const _mesh = createCardMesh(texture, scene);
-    const {backdrop: _backdrop, textBlock: _textBlock} = createBackdropMesh(texture, scene);
+    const { backdrop: _backdrop, textBlock: _textBlock } = createBackdropMesh(
+      texture,
+      scene,
+    );
     _backdrop.setParent(_mesh);
-    _backdrop.position.z = -0.001
+    _backdrop.position.z = -0.001;
     makeCardHoverable(_backdrop, scene);
     dispatch({ mesh: _mesh, textBlock: _textBlock });
 
     return () => {
       _mesh.dispose();
-      _backdrop.dispose()
-    }
+      _backdrop.dispose();
+    };
   }, [scene, texture]);
 
   // Transform update
   useEffect(() => {
-    if(!mesh) return;
+    if (!mesh) return;
 
-    if(position) mesh.position = position;
-    if(rotation) mesh.rotation = rotation;
+    if (position) mesh.position = position;
+    if (rotation) mesh.rotation = rotation;
   }, [mesh, position, rotation]);
 
   useEffect(() => {
-    if(!textBlock) return;
+    if (!textBlock) return;
 
     textBlock.text = title;
-  }, [textBlock, title])
-
+  }, [textBlock, title]);
 
   return null;
 }
@@ -86,7 +96,7 @@ function createCardMesh(texture: Texture, scene: Scene) {
   const material = new StandardMaterial("Card", scene);
   material.diffuseTexture = texture;
   material.emissiveTexture = texture;
-  
+
   const mesh = fromTextureToPlane(texture, scene);
   mesh.material = material;
   return mesh;
@@ -109,8 +119,8 @@ function createBackdropMesh(texture: Texture, scene: Scene) {
   textBlock.color = "white";
   textBlock.fontSize = "7%";
   rectangle.addControl(textBlock);
-  
-  return {backdrop, textBlock};
+
+  return { backdrop, textBlock };
 }
 
 function fromTextureToPlane(texture: Texture, scene: Scene) {
@@ -121,24 +131,39 @@ function fromTextureToPlane(texture: Texture, scene: Scene) {
 }
 
 function makeCardHoverable(backdrop: Mesh, scene: Scene) {
-  const addPointer = new ExecuteCodeAction(
-    ActionManager.NothingTrigger,
-    () => {
-      document.body.classList.add("cursor-pointer");
-    },
-  );
+  const addPointer = new ExecuteCodeAction(ActionManager.NothingTrigger, () => {
+    document.body.classList.add("cursor-pointer");
+  });
   const removePointer = new ExecuteCodeAction(
     ActionManager.NothingTrigger,
     () => {
-      document.body.classList.remove("cursor-pointer")
+      document.body.classList.remove("cursor-pointer");
     },
   );
 
-  const fadeIn = new InterpolateValueAction(ActionManager.NothingTrigger, backdrop, "visibility", 0.6, 200);
-  const fadeOut = new InterpolateValueAction(ActionManager.NothingTrigger, backdrop, "visibility", 0, 200);
+  const fadeIn = new InterpolateValueAction(
+    ActionManager.NothingTrigger,
+    backdrop,
+    "visibility",
+    0.6,
+    200,
+  );
+  const fadeOut = new InterpolateValueAction(
+    ActionManager.NothingTrigger,
+    backdrop,
+    "visibility",
+    0,
+    200,
+  );
 
-  const hover = new CombineAction(ActionManager.OnPointerOverTrigger, [addPointer, fadeIn]);
-  const blur = new CombineAction(ActionManager.OnPointerOutTrigger, [removePointer, fadeOut]);
+  const hover = new CombineAction(ActionManager.OnPointerOverTrigger, [
+    addPointer,
+    fadeIn,
+  ]);
+  const blur = new CombineAction(ActionManager.OnPointerOutTrigger, [
+    removePointer,
+    fadeOut,
+  ]);
 
   const actionManager = new ActionManager(scene);
   actionManager.registerAction(hover);
@@ -153,8 +178,8 @@ type CardState = Partial<{
 }>;
 
 function reducer(state: CardState, valuesToUpdate: CardState) {
-    return {
+  return {
     ...state,
-    ...valuesToUpdate
-  }
+    ...valuesToUpdate,
+  };
 }
