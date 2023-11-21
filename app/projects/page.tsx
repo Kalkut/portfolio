@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Projects() {
   const projects = [
-    "NPC Dialog Editor",
+    "NPC Dialogue Editor",
     "WebXR Space Editor",
     "Building Editor",
     "WebVR Environment Editor",
@@ -19,7 +19,7 @@ export default function Projects() {
       <div className="overflow-auto">
         <Project
           name="NPC Dialog Editor"
-          date="2019"
+          date="2018"
           media={{ type: "video", src: "/videos/dialog_editor.mp4" }}
         />
       </div>
@@ -60,7 +60,7 @@ function Project({ name, date, media }: ProjectProps) {
       <h2 className="text-xl font-semibold">{name}</h2>
       <h3 className="italic mb-6">{date}</h3>
       {media?.type === "video" && (
-        <video className="mb-9" src={media.src} muted />
+        <video className="mb-9" src={media.src} controls muted autoPlay />
       )}
       {media?.type === "img" && (
         <Image className="mb-9" src={media.src} alt="" />
@@ -68,25 +68,18 @@ function Project({ name, date, media }: ProjectProps) {
       <section className="mb-5">
         <h4 className="font-semibold mb-3">What is it ?</h4>
         <p>
-          Commodo non culpa id velit fugiat anim tempor veniam officia. Culpa id
-          cillum ad officia. Esse aliqua excepteur tempor eiusmod nostrud ex
-          fugiat ea aliqua labore elit. Nulla exercitation consectetur culpa non
-          ipsum veniam enim aute officia proident. Consequat dolore quis
-          exercitation aliquip consectetur laboris nostrud laborum et cillum
-          veniam. Amet consequat esse laboris veniam.
+          An NPC editor meant to be integrated in a 3D World Editor I was
+          working on. With a combination of "Dialogue Lines" and "User Choices"
+          (respectively in white and yellow in the video above) a top down
+          interactive dialogue tree can be created.
         </p>
       </section>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Technical stack</h4>
-        <p>
-          Incididunt excepteur sit elit mollit consequat elit fugiat do id.
-          Labore ad voluptate voluptate consequat qui. Aute officia magna
-          nostrud mollit nostrud est non officia ex commodo commodo incididunt.
-          Laborum culpa et aliqua amet voluptate. Deserunt ut aliqua
-          reprehenderit voluptate esse occaecat est incididunt in ut
-          exercitation fugiat. Amet nulla ea est voluptate nostrud sint
-          incididunt proident enim pariatur ullamco consectetur non.
-        </p>
+        <ul className="list-disc">
+          <li>Single Page App: React </li>
+          <li>Single Page App: React </li>
+        </ul>
       </section>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Outcome</h4>
