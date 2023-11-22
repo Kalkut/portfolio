@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import npc_dialogue_editor from "./content/npc_dialogue_editor";
 export default function Projects() {
   const projects = [
     "NPC Dialogue Editor",
@@ -13,14 +13,12 @@ export default function Projects() {
 
   return (
     <>
-      <h1 className="mb-6 text-2xl font-black flex justify-between">
+      <h1 className="mb-6 text-2xl font-black flex justify-between p-4 pb-0">
         Projects <BackToHome />
       </h1>
-      <div className="overflow-auto">
+      <div className="overflow-auto px-4">
         <Project
-          name="NPC Dialog Editor"
-          date="2018"
-          media={{ type: "video", src: "/videos/dialog_editor.mp4" }}
+          {...npc_dialogue_editor}
         />
       </div>
     </>
@@ -51,14 +49,17 @@ function BackToHome() {
 type ProjectProps = {
   name: string;
   date: string;
+  status: string;
+  description: string;
+  stack: readonly string[];
   media: { type: "video" | "img"; src: string };
 };
 
-function Project({ name, date, media }: ProjectProps) {
+function Project({ name, date, media, status, description, stack }: ProjectProps) {
   return (
     <section>
       <h2 className="text-xl font-semibold">{name}</h2>
-      <h3 className="italic mb-6">{date}</h3>
+      <h3 className="italic mb-6">{date} - {status}</h3>
       {media?.type === "video" && (
         <video className="mb-9" src={media.src} controls muted autoPlay />
       )}
@@ -67,28 +68,13 @@ function Project({ name, date, media }: ProjectProps) {
       )}
       <section className="mb-5">
         <h4 className="font-semibold mb-3">What is it ?</h4>
-        <p>
-          An NPC editor meant to be integrated in a 3D World Editor I was
-          working on. With a combination of "Dialogue Lines" and "User Choices"
-          (respectively in white and yellow in the video above) a top down
-          interactive dialogue tree can be created.
-        </p>
+        <p>{description}</p>
       </section>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Technical stack</h4>
-        <ul className="list-disc">
-          <li>Single Page App: React </li>
-          <li>Single Page App: React </li>
+        <ul>
+          {stack.map((item) => <li key={item}>{item}</li>)}
         </ul>
-      </section>
-      <section className="mb-5">
-        <h4 className="font-semibold mb-3">Outcome</h4>
-        <p>
-          Commodo commodo mollit aliquip laboris velit minim Lorem nisi
-          excepteur laborum cupidatat ipsum labore. Ullamco commodo in occaecat
-          velit amet occaecat fugiat nostrud quis pariatur. Minim ad nisi quis
-          quis ullamco cillum voluptate. Pariatur eiusmod et do aliquip velit.
-        </p>
       </section>
     </section>
   );
