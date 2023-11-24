@@ -1,12 +1,8 @@
 import Link from "next/link";
 
 const projects = [
-  { name: "NPC Dialogue Editor", id: "npc-editor" },
-  { name: "WebVR Environment Editor", id: "environment-editor" },
-  // "WebXR Space Editor",
-  // "Building Editor",
-  { name: "Proto Social WebVR", id: "social-vr" },
-  // "WebVR Reddit Browser",
+  { name: "Proto Social WebVR", id: "social-webvr-proto" },
+  { name: "Social WebVR Experiment", id: "social-webvr-experiment" },
 ];
 
 export default function ProjectsLayout({
