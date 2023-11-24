@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 const contentObject = {
   "npc-editor": npc_dialogue_editor,
   "social-vr": proto_social_webvr,
-  // "environment-editor": webvr_environment_editor,
+  "environment-editor": webvr_environment_editor,
 };
 
 export default function Project({

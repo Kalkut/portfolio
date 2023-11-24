@@ -15,7 +15,7 @@ export function Camera() {
       initialAlpha,
       initialBeta,
       20,
-      new Vector3(0.5, 1, 0.5),
+      new Vector3(0.5, 2, 0.5),
       scene,
     );
     camera.attachControl();

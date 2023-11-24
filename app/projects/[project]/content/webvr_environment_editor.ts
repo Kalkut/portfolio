@@ -5,8 +5,8 @@ const content: Project = {
   date: "2017",
   status: "Discontinued",
   media: {
-    type: "img",
-    src: "/pictures/social.jpg",
+    type: "video",
+    src: "/videos/environment.jpg",
   },
   description: `...
   `,
