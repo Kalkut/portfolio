@@ -1,10 +1,10 @@
 export default function Project() {
   return (
-    <section className="px-4 overflow-auto">
+    <section className="px-4 py-6 overflow-auto">
       <h2 className="text-xl font-semibold">Social WebVR Experiment</h2>
       <h3 className="italic mb-6">2016 - Discontinued</h3>
       <video
-        className="mb-1"
+        className="mb-4"
         src="/videos/social_webvr_experiment/multiplayer.mp4"
         controls
         muted
@@ -12,8 +12,9 @@ export default function Project() {
         loop
       />
       <p className="italic mb-9">
-        Multiplayer editing : A user selects a color, then a shape. Adds it to
-        the world and ta-da! The other user sees it in realtime
+        Multiplayer editing : A user (a pink sphere here...) selects a color,
+        then a shape. Adds it to the world and ta-da! The other user sees it in
+        realtime
       </p>
 
       <section className="mb-5">
@@ -65,14 +66,15 @@ export default function Project() {
 
         <section>
           <h4 className="font-semibold mb-3">Concept</h4>
-          <p className="mb-1.5 flex">
+          <p className="mb-1.5">
             <span>
-              The idea was an app where multiple users could spend time and
-              create an environment together where they could share media
-              content like watching YouTube videos.
+              The idea was to make a webapp where multiple users could spend
+              time and create an environment together where they could share
+              media content like watching YouTube videos.
             </span>
             <video
-              className="w-2/5"
+              className="my-8"
+              // className="w-2/5"
               controls
               muted
               autoPlay
@@ -80,17 +82,45 @@ export default function Project() {
               src="/videos/social_webvr_experiment/youtube.mp4"
             ></video>
           </p>
-          <p className="mb-1.5">
-            I wanted it to work as much as possible on regular web and mobile VR
-            without controllers so I used a lot what VR devs at the time called
-            gaze interaction (clicking by looking at something for a specific
-            amount of time)
-          </p>
-          <p className="mb-1.5">
+          <p className="mb-1.5 flex flex-col-reverse">
+            <video
+              className="my-8"
+              // className="w-2/5"
+              controls
+              muted
+              autoPlay
+              loop
+              src="/videos/social_webvr_experiment/building.mp4"
+            ></video>
             <span>
-              To compensate for the lack of buttons I implemented a contextual
-              menu
+              The environment creation would be done using primitive shapes
+              likeboxes, sphere, cylinder and tools like extrusion and cropping
+              (hole making)
             </span>
+          </p>
+        </section>
+        <section className="mb-5">
+          <h4 className="font-semibold mb-3">Challenges</h4>
+          <p className="mb-1.5">
+            In 2016, the WebVR ecosystem was <strong>rough</strong>. Bugs in
+            librairies were frequent, browser compatibility was bad, there was
+            no solution for text input in VR, most VR devices had no motion
+            controllers and mobile VR had to rely on gaze interactions (clicking
+            just by looking at an object for a few seconds).
+          </p>
+        </section>
+        <section className="mb-5">
+          <h4 className="font-semibold mb-3">Outcome</h4>
+          <p className="mb-1.5">
+            This project was my introductionary deep dive into 3D/VR
+            programming, it also made me more used to work with bleeding edge
+            frameworks and web APIs. Still after months of work and rework, with
+            all the experience I was gathering I knew I had to change my
+            approach. This was both too big of a project for the level of skill
+            I was at and mobile VR was not going to do the trick mostly due to
+            the lack of controllers. I reused part of the logic I built in the
+            YouTube player and developed a Youtube/Facebook WebVR browser
+            instead.
           </p>
         </section>
       </section>
@@ -98,7 +128,10 @@ export default function Project() {
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Technical stack</h4>
         <ul>
-          <li></li>
+          <li>React, Redux</li>
+          <li>A-Frame, Three.js</li>
+          <li>MediaSource API, WebSocket API</li>
+          <li>Node.js, Redis, </li>
         </ul>
       </section>
     </section>
