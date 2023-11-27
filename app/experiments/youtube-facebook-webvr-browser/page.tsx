@@ -67,12 +67,15 @@ export default function YouTubeFacebookWebVrProject() {
           <p className="mb-1.5">
             I ended up releasing it ! It was actually well recieved at the time,
             it was even mentioned in the{" "}
-            <a href="https://aframe.io/blog/awoa-62/">A-Frame newsletter</a> !
-            With a new found confidence in my ability to ship a complex WebVR
-            app, I wanted to go try once again to build a social VR app. Also
-            the project uses of youtube-dl was not sustainable. In retrospect I
-            could have pivoted this project toward a more generic VR media
-            consumption platform, but I just let it die.
+            <a className="underline" href="https://aframe.io/blog/awoa-62/">
+              A-Frame newsletter
+            </a>{" "}
+            ! With a new found confidence in my ability to ship a complex WebVR
+            app, I wanted to give another go at trying to build a social VR app.
+            Also the project's use of youtube-dl was not sustainable as it was
+            against YouTube TOS so I killed it. In retrospect I could have
+            pivoted this project toward a more generic VR media consumption
+            platform, but I guess hindsight truly is 20/20.
           </p>
         </section>
       </section>

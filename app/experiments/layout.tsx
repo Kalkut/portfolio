@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const projects = [
-  { name: "Proto Social WebVR", id: "social-webvr-proto" },
   { name: "Social WebVR Experiment", id: "social-webvr-experiment" },
   {
     name: "YouTube/Facebook WebVR Browser",
     id: "youtube-facebook-webvr-browser",
   },
+  { name: "Proto Social WebVR", id: "social-webvr-proto" },
 ];
 
 export default function ExperimentsLayout({
