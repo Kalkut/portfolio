@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SocialWebVrExperiment() {
   return (
     <section className="px-4 py-6 overflow-auto">
@@ -113,13 +115,19 @@ export default function SocialWebVrExperiment() {
           <h4 className="font-semibold mb-3">Outcome</h4>
           <p className="mb-1.5">
             This project was my introductionary deep dive into 3D/VR
-            programming, it also made me more used to work with bleeding edge
-            frameworks and web APIs. Still after months of work and rework, with
-            all the experience I was gathering I knew I had to change my
-            approach. This was both too big of a project for the level of skill
-            I was at and mobile VR was not going to do the trick mostly due to
-            the lack of controllers. I reused part of the logic I built in the
-            YouTube player and developed a Youtube/Facebook WebVR browser
+            programming, it also helped me getting comfortable working with
+            bleeding edge frameworks and web APIs. Still after months of work
+            and rework, with all the experience I was gathering I knew I had to
+            change my approach. This was both too big of a project for the level
+            of skill I was at and mobile VR was not going to do the trick mostly
+            due to the lack of controllers. I reused part of the logic I built
+            in the YouTube player and developed a{" "}
+            <Link
+              className="underline"
+              href="/experiments/youtube-facebook-webvr-browser"
+            >
+              Youtube/Facebook WebVR browser
+            </Link>{" "}
             instead.
           </p>
         </section>

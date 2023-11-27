@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function YouTubeFacebookWebVrProject() {
   return (
     <section className="px-4 py-6 overflow-auto">
@@ -65,17 +67,10 @@ export default function YouTubeFacebookWebVrProject() {
         <section className="mb-5">
           <h4 className="font-semibold mb-3">Outcome</h4>
           <p className="mb-1.5">
-            I ended up releasing it ! It was actually well recieved at the time,
-            it was even mentioned in the{" "}
-            <a className="underline" href="https://aframe.io/blog/awoa-62/">
-              A-Frame newsletter
-            </a>{" "}
-            ! With a new found confidence in my ability to ship a complex WebVR
-            app, I wanted to give another go at trying to build a social VR app.
-            Also the project's use of youtube-dl was not sustainable as it was
-            against YouTube TOS so I killed it. In retrospect I could have
-            pivoted this project toward a more generic VR media consumption
-            platform, but I guess hindsight truly is 20/20.
+            I demoed this project multiple times but I just did not feel it.
+            Also I saw more and more native SocialVR apps, some of which were as
+            well done as possible at the time and I loved none of them. I just
+            accepted that I just don't like Social VR and moved on.
           </p>
         </section>
       </section>
