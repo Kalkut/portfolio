@@ -1,4 +1,4 @@
-export default function Project() {
+export default function SocialWebVrExperiment() {
   return (
     <section className="px-4 py-6 overflow-auto">
       <h2 className="text-xl font-semibold">Social WebVR Experiment</h2>
@@ -128,10 +128,10 @@ export default function Project() {
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Technical stack</h4>
         <ul>
-          <li>React, Redux</li>
-          <li>A-Frame, Three.js</li>
-          <li>MediaSource API, WebSocket API</li>
-          <li>Node.js, Redis, </li>
+          <li>Front: React, Redux</li>
+          <li>3D/VR: A-Frame, Three.js</li>
+          <li>Browser APIs: WebVR, MediaSource, WebSocket</li>
+          <li>Back: Node.js, Redis</li>
         </ul>
       </section>
     </section>
