@@ -19,14 +19,14 @@ export default function ExperimentsLayout({
       <h1 className="mb-6 text-2xl font-black flex justify-between p-4 pb-0">
         Experiments <BackToHome />
       </h1>
-      <ul className="px-4">
+      <ul className="p-4">
         {projects.map(({ name, id }) => (
           <li key={id}>
             <Link href={`/experiments/${id}`}>{name}</Link>
           </li>
         ))}
       </ul>
-      {children}
+      <div className="overflow-auto">{children}</div>
     </div>
   );
 }

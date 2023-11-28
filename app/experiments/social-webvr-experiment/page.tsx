@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function SocialWebVrExperiment() {
   return (
-    <section className="px-4 py-6 overflow-auto">
+    <section className="px-4 py-6">
       <h2 className="text-xl font-semibold">Social WebVR Experiment</h2>
       <h3 className="italic mb-6">2016 - Discontinued</h3>
       <video
