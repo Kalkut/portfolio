@@ -49,7 +49,7 @@ export default function SocialWebVRPrototype() {
           none of them. I just accepted that I just don't like Social VR and
           moved on. I decided to focus on the creative potential of VR by making
           an{" "}
-          <Link className="underline" href="">
+          <Link className="underline" href="/experiments/tiled-world-editor">
             environment editor
           </Link>
         </p>

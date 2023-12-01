@@ -7,6 +7,8 @@ const projects = [
     id: "youtube-facebook-webvr-browser",
   },
   { name: "Proto Social WebVR", id: "social-webvr-proto" },
+  { name: "Tiled WebVR World Editor", id: "tiled-world-editor" },
+  { name: "WebXR City Builder", id: "webxr-city-builder" },
 ];
 
 export default function ExperimentsLayout({
