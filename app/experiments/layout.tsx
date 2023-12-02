@@ -9,6 +9,8 @@ const projects = [
   { name: "Proto Social WebVR", id: "social-webvr-proto" },
   { name: "Tiled WebVR World Editor", id: "tiled-world-editor" },
   { name: "WebXR City Builder", id: "webxr-city-builder" },
+  { name: "NPC Editor", id: "npc-editor" },
+  { name: "Building Editor", id: "building-editor" },
 ];
 
 export default function ExperimentsLayout({

@@ -4,7 +4,7 @@ export default function WebXRCityBuilder() {
   return (
     <section className="px-4">
       <h2 className="text-xl font-semibold">WebXR City Builder</h2>
-      <h3 className="italic mb-6">2018 - Discontinued</h3>
+      <h3 className="italic mb-6">2018/2019 - Discontinued</h3>
       <video
         className="mb-4"
         src="/videos/world/world_edition.mp4"
@@ -48,16 +48,36 @@ export default function WebXRCityBuilder() {
           tool. Demos with this app were way more positive than with any of my
           previous builders. I still needed to make the created worlds livelier,
           also I wanted buildings users could enter in. So I started a building
-          and an NPC editor for those purposes.
+          and a NPC editor for those purposes.
+        </p>
+        <p className="mb-1.5">
+          It gave me good understanding of what kind of experiences/games can be
+          built build with those assets, and as far as low poly goes I don't see
+          a limit on the kind or the scope of what can be achieved.
+        </p>
+        <p className="mb-1 5">
+          I had to focus on working for customers, I paused the developement of
+          this editors and the two others (
+          <Link className="underline" href="/experiments/npc-editor">
+            NPC
+          </Link>{" "}
+          and{" "}
+          <Link className="underline" href="/experiments/building-editor">
+            Building
+          </Link>
+          ) and never resumed it.
         </p>
       </section>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Technical stack</h4>
         <ul>
-          <li>React</li>
-          <li>Babylon.js</li>
-          <li>Node.js</li>
-          <li>GCP</li>
+          <li>Front: React</li>
+          <li>3D: Babylon.js, 3ds Max (Maxscript), Maya</li>
+          <li>Back: Node.js, Puppeteer</li>
+          <li>
+            Cloud: Google Cloud Platform (Datastore, App Engine, Cloud
+            Functions)
+          </li>
         </ul>
       </section>
     </section>
