@@ -52,41 +52,66 @@ export default function SpatialReddit() {
         </section>
         <section className="mb-5">
           <h4 className="font-semibold mb-3">Outcome</h4>
-          <p className="mb-1.5">
-            <div className="mb-3">
-              The reception of this proof of concept{" "}
-              <a
-                className="underline"
-                href="https://www.reddit.com/r/virtualreality/comments/aim6z4/reddit_in_vr_browsing_rvirtualreality_cyberspace/"
-              >
-                has been mixed on Reddit
-              </a>
-              .{" "}
-              <a
-                className="underline"
-                href="https://www.reddit.com/r/virtualreality/comments/aim6z4/comment/eeovs6f/?utm_source=share&utm_medium=web2x&context=3"
-              >
-                After explaining my intent a bit more
-              </a>
-            </div>
-            <blockquote className="mb-2 text-gray-600 bg-white/50 italic p-2">
-              <p className="mb-1.5">
-                I did this proof of concept six month ago and I expected such
-                reactions this is why I dropped this project and worked on a 3D
-                game engine for non programmers instead.
-              </p>
-              <p className="mb-1.5">
-                I still think that it is interesting : moving around would have
-                been optional since I would also have added a menu and a 3D
-                space would have allowed multiple people to share stuff there
-                (by grabbing content) like another poster said.
-              </p>
-            </blockquote>
+          <p className="mb-6">
+            The reception of this proof of concept{" "}
+            <a
+              className="underline"
+              href="https://www.reddit.com/r/virtualreality/comments/aim6z4/reddit_in_vr_browsing_rvirtualreality_cyberspace/"
+            >
+              has been mixed on Reddit
+            </a>
+            .{" "}
+            <a
+              className="underline"
+              href="https://www.reddit.com/r/virtualreality/comments/aim6z4/comment/eeovs6f/?utm_source=share&utm_medium=web2x&context=3"
+            >
+              I had to give more explanation about why I was even showing this
+              very rough tech demo
+            </a>
+          </p>
 
-            <div>
-              I found that people were much more understanding of my endeavor
-              and also I received very constructive feedback
-            </div>
+          <blockquote className="mb-6 text-gray-600 bg-white/40 italic p-4">
+            <p className="mb-3">
+              I did this proof of concept six month ago and I expected such
+              reactions this is why I dropped this project and worked on a 3D
+              game engine for non programmers instead.
+            </p>
+            <p>
+              I still think that it is interesting : moving around would have
+              been optional since I would also have added a menu and a 3D space
+              would have allowed multiple people to share stuff there (by
+              grabbing content) like another poster said.
+            </p>
+          </blockquote>
+
+          <p className="mb-6">
+            With more context about what I was experimenting with this project,
+            I found that people were much more understanding of my endeavor
+          </p>
+
+          <blockquote className="mb-6 text-gray-600 bg-white/40 italic p-4">
+            <p className="mb-1.5">
+              Interesting idea. It feels like it could be made useful even
+              outside of VR. Except instead of flying into the thread/comment,
+              you just click on the dot to jump to the link. If you hover on the
+              data point, it shows you a thumbnail of the thread or the post.
+            </p>
+
+            <p>That 3 axis sorting of content could legitimately be useful.</p>
+          </blockquote>
+
+          <blockquote className="mb-6 text-gray-600 bg-white/40 italic p-4">
+            <p className="mb-1.5">
+              I think it's a great idea that just needs to be polished more.
+            </p>
+          </blockquote>
+
+          <p>
+            The point of this kind of project is hard to get across because it
+            is not meant to be a product. It is a way for me as a creator to
+            challenge the assumptions I have about a problem/topic. The takeaway
+            from this are quite hard to share, but I felt like it was still
+            better to show what I made.
           </p>
         </section>
       </section>
