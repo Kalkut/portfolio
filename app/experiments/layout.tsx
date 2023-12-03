@@ -12,6 +12,7 @@ const projects = [
   { name: "NPC Editor", id: "npc-editor" },
   { name: "Building Editor", id: "building-editor" },
   { name: "Spatial Reddit", id: "spatial-reddit" },
+  { name: "WebXR Space Editor", id: "webxr-space-editor" },
 ];
 
 export default function ExperimentsLayout({

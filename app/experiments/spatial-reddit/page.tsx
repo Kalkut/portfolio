@@ -15,7 +15,7 @@ export default function SpatialReddit() {
       />
 
       <section className="mb-5">
-        <section>
+        <section className="mb-6">
           <h4 className="font-semibold mb-3">Context</h4>
           <p className="mb-1.5">
             <span>
@@ -73,8 +73,14 @@ export default function SpatialReddit() {
           <blockquote className="mb-6 text-gray-600 bg-white/40 italic p-4">
             <p className="mb-3">
               I did this proof of concept six month ago and I expected such
-              reactions this is why I dropped this project and worked on a 3D
-              game engine for non programmers instead.
+              reactions this is why I dropped this project and worked on a{" "}
+              <Link
+                className="underline"
+                href="/experiments/webxr-city-builder"
+              >
+                3D game engine for non programmers
+              </Link>{" "}
+              instead.
             </p>
             <p>
               I still think that it is interesting : moving around would have
