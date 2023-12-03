@@ -24,7 +24,7 @@ export default function WebXrSpaceEditor() {
         <p className="mb-2">
           It made me grow a lot as an engineer, so when I looked back at my work
           on the{" "}
-          <Link className="underline" href="/experiments//webxr-city-builder">
+          <Link className="underline" href="/experiments/webxr-city-builder">
             city editor
           </Link>{" "}
           I got inspired by what I managed to do, but also wanted to take a
@@ -95,10 +95,19 @@ export default function WebXrSpaceEditor() {
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Outcome</h4>
         <p className="mb-1.5">
-          I dropped it, honestly I don't even remember why. I mean had my first
-          child at the time so this project was not my priority. Also there are
-          technical choices like XState that I would not make again, Hasura
-          could make sense for a few of my customers.
+          I was unhappy with the text readability in VR. When a panel was more
+          than a few meters away it was not crisp. Now content readability in VR
+          became an obsession since I easily get obsessed by something not
+          working as it should.
+        </p>
+        <p>
+          To test my understanding of how to fix this issue that plagues a lot
+          of WebXR applications, I decided to build an app that required
+          readability to be perfect: a{" "}
+          <Link className="underline" href="/experiments/webxr-pdf-reader">
+            WebXR PDF reader
+          </Link>
+          .
         </p>
       </section>
       <section className="mb-5">

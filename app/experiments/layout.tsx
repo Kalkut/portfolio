@@ -13,6 +13,7 @@ const projects = [
   { name: "Building Editor", id: "building-editor" },
   { name: "Spatial Reddit", id: "spatial-reddit" },
   { name: "WebXR Space Editor", id: "webxr-space-editor" },
+  { name: "WebXR PDF Reader", id: "webxr-pdf-reader" },
 ];
 
 export default function ExperimentsLayout({
