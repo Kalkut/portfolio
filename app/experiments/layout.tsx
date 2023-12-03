@@ -14,6 +14,7 @@ const projects = [
   { name: "Spatial Reddit", id: "spatial-reddit" },
   { name: "WebXR Space Editor", id: "webxr-space-editor" },
   { name: "WebXR PDF Reader", id: "webxr-pdf-reader" },
+  { name: "WebXR Google Drive Client", id: "webxr-google-drive-client" },
 ];
 
 export default function ExperimentsLayout({
