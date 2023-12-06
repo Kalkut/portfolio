@@ -9,48 +9,65 @@ import {
   createContext,
   useEffect,
   useLayoutEffect,
+  useReducer,
   useRef,
   useState,
 } from "react";
+import { usePathname } from "next/navigation";
+
 import clsx from "clsx";
 
+type Runtime = { engine: Engine; scene: Scene };
 export function Canvas({ children }: { children: ReactNode }) {
-  const [scene, setScene] = useState<Scene>();
+  const [{ scene, engine }, setRuntime] = useReducer(
+    (state: Partial<Runtime>, newValues: Partial<Runtime>) => ({
+      ...state,
+      ...newValues,
+    }),
+    {},
+  );
+
   const [ready, setReady] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pathname = usePathname();
 
   useLayoutEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const engine = new Engine(canvas, true);
-    const _scene = new Scene(engine);
+    const _engine = new Engine(canvas, true, { antialias: true });
+    const _scene = new Scene(_engine);
 
-    setScene(_scene);
-    engine.runRenderLoop(() => {
+    setRuntime({ scene: _scene, engine: _engine });
+    _engine.runRenderLoop(() => {
       _scene.render();
     });
 
-    const resize = () => engine.resize(false);
-    // window.addEventListener("resize", resize);
+    const resize = () => _engine.resize();
+    window.addEventListener("resize", resize);
 
     return () => {
-      engine.stopRenderLoop();
+      _engine.stopRenderLoop();
       _scene.dispose();
-      engine.dispose();
-      // window.removeEventListener("resize", resize);
+      _engine.dispose();
+      window.removeEventListener("resize", resize);
     };
   }, []);
 
+  useEffect(() => {
+    if (pathname === "/" && engine) engine.resize();
+  }, [engine, pathname]);
+
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        width=""
-        height=""
-        className="h-full w-full touch-none bg-pink-700"
-      ></canvas>
-      {/* <canvas ref={canvasRef} className="h-full w-full absolute" /> */}
+      <div
+        className={clsx(
+          "h-screen w-screen overflow-hidden",
+          pathname === "/projects" && "hidden xl:block",
+        )}
+      >
+        <canvas ref={canvasRef} className={clsx("h-full w-full")}></canvas>
+      </div>
       {scene && (
         <SceneContext.Provider value={scene}>
           <ReadyContext.Provider value={setReady}>
