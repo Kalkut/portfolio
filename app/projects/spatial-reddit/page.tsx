@@ -74,10 +74,7 @@ export default function SpatialReddit() {
             <p className="mb-3">
               I did this proof of concept six month ago and I expected such
               reactions this is why I dropped this project and worked on a{" "}
-              <Link
-                className="underline"
-                href="/experiments/webxr-city-builder"
-              >
+              <Link className="underline" href="/projects/webxr-city-builder">
                 3D game engine for non programmers
               </Link>{" "}
               instead.

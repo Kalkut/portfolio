@@ -124,7 +124,7 @@ export default function SocialWebVrExperiment() {
             in the YouTube player and developed a{" "}
             <Link
               className="underline"
-              href="/experiments/youtube-facebook-webvr-browser"
+              href="/projects/youtube-facebook-webvr-browser"
             >
               Youtube/Facebook WebVR browser
             </Link>{" "}

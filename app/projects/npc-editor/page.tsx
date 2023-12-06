@@ -17,7 +17,7 @@ export default function NpcEditor() {
         <h4 className="font-semibold mb-3">Context</h4>
         <p>
           To make the cities made with the{" "}
-          <Link className="underline" href="/experiments/webxr-city-builder">
+          <Link className="underline" href="/projects/webxr-city-builder">
             city builder
           </Link>{" "}
           livelier I wanted to add NPCs, so here goes the NPC editor

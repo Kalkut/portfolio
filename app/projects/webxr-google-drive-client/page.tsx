@@ -17,7 +17,7 @@ export default function WebXrGoogleDriveClient() {
         <h4 className="font-semibold mb-3">Context</h4>
         <p className="mb-2">
           The{" "}
-          <Link className="underline" href="/experiments/webxr-pdf-reader">
+          <Link className="underline" href="/projects/webxr-pdf-reader">
             PDF reader
           </Link>{" "}
           was successful enough to encourage me to purse a wider feature set.
@@ -67,14 +67,14 @@ export default function WebXrGoogleDriveClient() {
           but I had a sudden health issue that prevented me from working on it
           for a long time.
         </p>
-        <p>
+        <p className="mb-1.5">
           I got back at work and I am currently working on some twist of this
           idea. You will soon see a new entry on this portfolio, but you reached
           the end for now !
         </p>
 
         <p>
-          <strong>Thank you for having bothered to read up until here !</strong>
+          <strong>Thank you for having bothered to read up to here !</strong>
         </p>
       </section>
       <section className="mb-5">

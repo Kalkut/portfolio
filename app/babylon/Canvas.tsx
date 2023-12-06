@@ -31,20 +31,26 @@ export function Canvas({ children }: { children: ReactNode }) {
       _scene.render();
     });
 
-    const resize = () => engine.resize();
-    window.addEventListener("resize", resize);
+    const resize = () => engine.resize(false);
+    // window.addEventListener("resize", resize);
 
     return () => {
       engine.stopRenderLoop();
       _scene.dispose();
       engine.dispose();
-      window.removeEventListener("resize", resize);
+      // window.removeEventListener("resize", resize);
     };
   }, []);
 
   return (
     <>
-      <canvas ref={canvasRef} className="h-full w-full" />
+      <canvas
+        ref={canvasRef}
+        width=""
+        height=""
+        className="h-full w-full touch-none bg-pink-700"
+      ></canvas>
+      {/* <canvas ref={canvasRef} className="h-full w-full absolute" /> */}
       {scene && (
         <SceneContext.Provider value={scene}>
           <ReadyContext.Provider value={setReady}>

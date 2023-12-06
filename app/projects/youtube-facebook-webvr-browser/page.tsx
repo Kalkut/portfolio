@@ -74,7 +74,7 @@ export default function YouTubeFacebookWebVrProject() {
             </a>{" "}
             ! With a new found confidence in my ability to ship a complex WebVR
             app, I wanted to give another go at{" "}
-            <Link className="underline" href="/experiments/social-webvr-proto">
+            <Link className="underline" href="/projects/social-webvr-proto">
               trying to build a social VR app
             </Link>
             . Also the project's use of youtube-dl was not sustainable as it was

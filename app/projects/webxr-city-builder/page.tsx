@@ -58,11 +58,11 @@ export default function WebXRCityBuilder() {
         <p className="mb-1 5">
           I had to focus on working for customers, I paused the developement of
           this editors and the two others (
-          <Link className="underline" href="/experiments/npc-editor">
+          <Link className="underline" href="/projects/npc-editor">
             NPC
           </Link>{" "}
           and{" "}
-          <Link className="underline" href="/experiments/building-editor">
+          <Link className="underline" href="/projects/building-editor">
             Building
           </Link>
           ) and never resumed it.

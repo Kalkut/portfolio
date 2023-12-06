@@ -17,7 +17,7 @@ export default function TiledWebVRWorldEditor() {
         <h4 className="font-semibold mb-3">Context</h4>
         <p>
           After giving up on{" "}
-          <Link className="underline" href="/experiments/social-webvr-proto">
+          <Link className="underline" href="/projects/social-webvr-proto">
             Social VR
           </Link>
           , I wanted to focus on 3D world edition. The first step was to have a
@@ -47,7 +47,7 @@ export default function TiledWebVRWorldEditor() {
         <p className="mb-1.5">
           I was unconvinced by the approach, to me this was leading me to
           nowhere. I killed it with no ceremony and moved on to a{" "}
-          <Link className="underline" href="/experiments/building_editor">
+          <Link className="underline" href="/projects/building_editor">
             new approach on world editing
           </Link>
         </p>

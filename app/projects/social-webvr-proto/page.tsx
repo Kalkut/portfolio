@@ -10,10 +10,7 @@ export default function SocialWebVRPrototype() {
         <h4 className="font-semibold mb-3">Context</h4>
         <p>
           Here we go again... A second attempt after my first{" "}
-          <Link
-            className="underline"
-            href="/experiments/social-webvr-experiment"
-          >
+          <Link className="underline" href="/projects/social-webvr-experiment">
             Social WebVR
           </Link>{" "}
           one
@@ -23,16 +20,13 @@ export default function SocialWebVRPrototype() {
         <h4 className="font-semibold mb-3">What is it ?</h4>
         <p>
           A graphical upgrade on the very primitive (to say the least){" "}
-          <Link
-            className="underline"
-            href="/experiments/social-webvr-experiment"
-          >
+          <Link className="underline" href="/projects/social-webvr-experiment">
             first version
           </Link>
           . It incorporated the{" "}
           <Link
             className="underline"
-            href="http://localhost:3000/experiments/youtube-facebook-webvr-browser"
+            href="http://localhost:3000/projects/youtube-facebook-webvr-browser"
           >
             Facebook Browser
           </Link>{" "}
@@ -49,7 +43,7 @@ export default function SocialWebVRPrototype() {
           none of them. I just accepted that I just don't like Social VR and
           moved on. I decided to focus on the creative potential of VR by making
           an{" "}
-          <Link className="underline" href="/experiments/tiled-world-editor">
+          <Link className="underline" href="/projects/tiled-world-editor">
             environment editor
           </Link>
         </p>

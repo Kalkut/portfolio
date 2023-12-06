@@ -17,7 +17,7 @@ export default function BuildingEditor() {
         <h4 className="font-semibold mb-3">Context</h4>
         <p>
           The{" "}
-          <Link className="underline" href="/experiments/webxr-city-builder">
+          <Link className="underline" href="/projects/webxr-city-builder">
             city builder
           </Link>{" "}
           had buildings but players could not enter them, this project aimed to

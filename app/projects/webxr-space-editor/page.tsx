@@ -24,7 +24,7 @@ export default function WebXrSpaceEditor() {
         <p className="mb-2">
           It made me grow a lot as an engineer, so when I looked back at my work
           on the{" "}
-          <Link className="underline" href="/experiments/webxr-city-builder">
+          <Link className="underline" href="/projects/webxr-city-builder">
             city editor
           </Link>{" "}
           I got inspired by what I managed to do, but also wanted to take a
@@ -104,7 +104,7 @@ export default function WebXrSpaceEditor() {
           To test my understanding of how to fix this issue that plagues a lot
           of WebXR applications, I decided to build an app that required
           readability to be perfect: a{" "}
-          <Link className="underline" href="/experiments/webxr-pdf-reader">
+          <Link className="underline" href="/projects/webxr-pdf-reader">
             WebXR PDF reader
           </Link>
           .

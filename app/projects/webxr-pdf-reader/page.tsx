@@ -17,7 +17,7 @@ export default function WebXrPdfReader() {
         <h4 className="font-semibold mb-3">Context</h4>
         <p className="mb-2">
           The readability issue I faced with my{" "}
-          <Link className="underline" href="/experiments/webxr-space-editor">
+          <Link className="underline" href="/projects/webxr-space-editor">
             WebXR Space Editor
           </Link>{" "}
           and the fact that I had not shipped since a long time then, made me
@@ -45,7 +45,7 @@ export default function WebXrPdfReader() {
           the world ! I did not promote it much, its spread is mostly due to
           word of mouth in the WebXR community. PDF is fine but then I intended
           to support much more format and features in order to{" "}
-          <Link className="underline" href="/experiments/google-drive-client/">
+          <Link className="underline" href="/projects/google-drive-client/">
             build a full featured WebXR media consumption app
           </Link>
           . Still had to put the project on hiatus for a few month because of an
