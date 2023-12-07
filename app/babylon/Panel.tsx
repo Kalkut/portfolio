@@ -10,86 +10,109 @@ import { TextBlock } from "@babylonjs/gui/2D/controls/textBlock";
 import { Rectangle } from "@babylonjs/gui/2D/controls/rectangle";
 import { ParentNodeContext } from "./contexts/parentNode";
 import { mergeNewValuesIntoState } from "../lib/reducers/mergeNewValuesIntoState";
+import { TransformNode } from "@babylonjs/core";
 
 export function Panel({
   children,
   position,
   rotation,
-  scaling,
+  width,
+  height,
+  title,
 }: {
-  children: ReactNode;
+  title: string;
+  children?: ReactNode;
   position?: Vector3;
   rotation?: Vector3;
-  scaling?: Vector3;
+  width?: number;
+  height?: number;
 }) {
-  type PanelState = { mesh: Mesh; textBlock: TextBlock };
+  type PanelState = {
+    mesh: Mesh;
+    textBlock: TextBlock;
+    childrenAnchor: TransformNode;
+  };
   const scene = useContext(SceneContext);
-  const [{ mesh }, setPanelState] = useReducer(
+  const [{ mesh, childrenAnchor, textBlock }, setPanelState] = useReducer(
     mergeNewValuesIntoState<PanelState>,
     {},
   );
 
   useEffect(() => {
-    const _mesh = createPanelMesh(scene);
-    const _textBlock = attachAdvancedDynamicTexture(_mesh);
-    _textBlock.text = "2016";
+    if (textBlock) textBlock.text = title;
+  }, [textBlock, title]);
 
-    setPanelState({ mesh: _mesh, textBlock: _textBlock });
+  useEffect(() => {
+    const _mesh = createPanelMesh(scene, width, height);
+    const _textBlock = attachAdvancedDynamicTexture(_mesh, width, height);
+
+    const _childrenAnchor = new TransformNode("panel_childrenAnchor", scene);
+    _childrenAnchor.position.z = -0.01;
+    _childrenAnchor.parent = _mesh;
+
+    setPanelState({
+      mesh: _mesh,
+      textBlock: _textBlock,
+      childrenAnchor: _childrenAnchor,
+    });
+
     return () => {
       _mesh.dispose();
     };
-  }, [scene]);
+  }, [scene, width, height]);
 
   useEffect(() => {
     if (!mesh) return;
 
     if (position) mesh.position = position;
     if (rotation) mesh.rotation = rotation;
-    if (scaling) mesh.scaling = scaling;
-  }, [mesh, position, rotation, scaling]);
+  }, [mesh, position, rotation]);
 
-  if (!mesh) return null;
+  if (!childrenAnchor || !children) return null;
   return (
-    <ParentNodeContext.Provider value={mesh}>
+    <ParentNodeContext.Provider value={childrenAnchor}>
       {children}
     </ParentNodeContext.Provider>
   );
 }
 
-function createPanelMesh(scene: Scene) {
-  const mesh = MeshBuilder.CreatePlane("Card", {}, scene);
-  // const material = new StandardMaterial("Card", scene);
-  // mesh.visibility = 0.5;
-  // mesh.material = material;
+function createPanelMesh(scene: Scene, width?: number, height?: number) {
+  const mesh = MeshBuilder.CreatePlane("Card", { width, height }, scene);
   return mesh;
 }
 
-function createDateMesh(scene: Scene) {
-  const mesh = MeshBuilder.CreatePlane("Card", {}, scene);
-  const material = new StandardMaterial("Card", scene);
-  mesh.material = material;
-  return mesh;
-}
+function attachAdvancedDynamicTexture(mesh: Mesh, width = 1, height = 1) {
+  const defaultPixelSize = 1024;
+  const canvasWidth = defaultPixelSize * width;
+  const canvasHeight = defaultPixelSize * height;
+  const advancedTexture = AdvancedDynamicTexture.CreateForMesh(
+    mesh,
+    canvasWidth,
+    canvasHeight,
+  );
 
-function attachAdvancedDynamicTexture(mesh: Mesh) {
-  const advancedTexture = AdvancedDynamicTexture.CreateForMesh(mesh);
+  const backgroundRectangle = new Rectangle();
+  backgroundRectangle.background = "black";
+  backgroundRectangle.alpha = 0.5;
+  backgroundRectangle.width = "100%";
+  backgroundRectangle.thickness = 10;
+  backgroundRectangle.color = "white";
+  advancedTexture.addControl(backgroundRectangle);
 
-  const rectangle = new Rectangle();
-  rectangle.background = "black";
-  rectangle.alpha = 0.5;
-  rectangle.width = "100%";
-  rectangle.thickness = 10;
-  rectangle.color = "white";
-  advancedTexture.addControl(rectangle);
+  // const rectangle = new Rectangle();
+  // rectangle.width = "100%";
+  // rectangle.horizontalAlignment = Rectangle.HORIZONTAL_ALIGNMENT_LEFT;
+  // rectangle.verticalAlignment = Rectangle.VERTICAL_ALIGNMENT_TOP;
 
   const textBlock = new TextBlock();
   textBlock.textWrapping = true;
   textBlock.horizontalAlignment = TextBlock.HORIZONTAL_ALIGNMENT_LEFT;
   textBlock.verticalAlignment = TextBlock.VERTICAL_ALIGNMENT_TOP;
-  textBlock.top = "-42%";
-  textBlock.left = "-37%";
+  textBlock.top = "-40%";
+  textBlock.leftInPixels = -0.4 * canvasWidth;
   textBlock.color = "white";
   textBlock.fontSize = "7%";
+  // textBlock.heightInPixels = 200;
   advancedTexture.addControl(textBlock);
 
   return textBlock;

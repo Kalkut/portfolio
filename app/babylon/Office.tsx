@@ -18,11 +18,44 @@ export default function Office() {
       <DefaultEnvironment color="#1e3a8a">
         <Model url="/models/desk.glb" rotation={new Vector3(0, Math.PI / 2)} />
         <Panel
-          scaling={new Vector3(2, 2.5, 1)}
-          position={new Vector3(-4, 2.5, -1)}
-          rotation={new Vector3(0, -Math.PI / 2, 0)}
-        />
-        <Card
+          title="2016"
+          width={2}
+          height={2}
+          position={new Vector3(-2.5, 5, 2)}
+        >
+          <Card
+            type="video"
+            title="Social WebVR Experiment"
+            preview="/videos/social_webvr_experiment/multiplayer.mp4"
+          />
+        </Panel>
+        <Panel
+          title="2017"
+          width={5}
+          height={2}
+          position={new Vector3(1.5, 5, 2)}
+        >
+          <Card
+            type="video"
+            title="YouTube/Facebook WebVR Browser"
+            preview="/videos/browser/navigation.mp4"
+            position={new Vector3(-1.25, 0, 0)}
+          />
+          {/* <Card
+            type="video"
+            title="Tiled WebVR World Editor"
+            preview="/videos/ground.mp4"
+            position={new Vector3(0, -0.7, 0)}
+          /> */}
+          <Card
+            type="image"
+            title="Proto Social WebVR"
+            preview="/pictures/social.jpg"
+            position={new Vector3(1, 0, 0)}
+          />
+        </Panel>
+
+        {/* <Card
           type="video"
           title="WebVR World Editor"
           preview="/videos/world/world_edition.mp4"
@@ -87,7 +120,7 @@ export default function Office() {
           title="Building Editor"
           preview="/videos/reddit_flat.webm"
           position={new Vector3(4, 2, 2)}
-        />
+        /> */}
       </DefaultEnvironment>
     </Canvas>
   );
