@@ -71,27 +71,61 @@ export default function Office() {
         </Panel>
         <Panel
           title="2019"
-          width={2}
-          height={4}
-          position={new Vector3(3, 3.88, 2)}
+          width={6}
+          height={1.75}
+          position={new Vector3(4.75, 5, 2)}
         >
           <Card
             type="video"
             title="WebxR City Builder"
             preview="/videos/world/world_edition.mp4"
-            position={new Vector3(0, 1, 0)}
+            position={new Vector3(-2, -0.15, 0)}
           />
           <Card
             type="video"
             title="NPC Editor"
             preview="/videos/npc/dialog_editor.mp4"
-            position={new Vector3(0, -0.1, 0)}
+            position={new Vector3(0, -0.15, 0)}
           />
           <Card
             type="video"
             title="Building Editor"
             preview="/videos/house_builder.mp4"
-            position={new Vector3(0, -1.25, 0)}
+            position={new Vector3(2, -0.15, 0)}
+          />
+        </Panel>
+
+        <Panel
+          title="2021"
+          width={3.5}
+          height={1.75}
+          position={new Vector3(-0.25, 3, 2)}
+        >
+          <Card
+            type="video"
+            title="WebXR Space Editor"
+            preview="/videos/environment.mp4"
+            position={new Vector3(-0.65, -0.15, 0)}
+          />
+          <Card
+            type="video"
+            title="WebXR PDF Reader"
+            preview="/videos/pdf_reader.mp4"
+            position={new Vector3(1, -0.15, 0)}
+          />
+        </Panel>
+
+        <Panel
+          title="2022"
+          width={2}
+          height={1.75}
+          position={new Vector3(3, 3, 2)}
+        >
+          <Card
+            type="video"
+            title="Google Drive WebXR Client"
+            preview="/videos/google_drive_client.mp4"
+            position={new Vector3(0, -0.15, 0)}
           />
         </Panel>
 
