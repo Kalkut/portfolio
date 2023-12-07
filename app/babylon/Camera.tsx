@@ -21,10 +21,10 @@ export function Camera() {
     camera.attachControl();
     camera.lowerRadiusLimit = 10;
     camera.upperRadiusLimit = 15;
-    // camera.lowerAlphaLimit = initialAlpha - angularRadius;
-    // camera.upperAlphaLimit = initialAlpha + angularRadius;
-    // camera.lowerBetaLimit = initialBeta - angularRadius;
-    // camera.upperBetaLimit = initialBeta + angularRadius;
+    camera.lowerAlphaLimit = initialAlpha - angularRadius;
+    camera.upperAlphaLimit = initialAlpha + angularRadius;
+    camera.lowerBetaLimit = initialBeta - angularRadius;
+    camera.upperBetaLimit = initialBeta + angularRadius;
 
     return () => {
       camera.dispose();

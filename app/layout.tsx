@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Office from "./babylon/Office";
+import { Canvas } from "./babylon/Canvas";
 
 const inter = Inter({ subsets: ["latin"] });
 

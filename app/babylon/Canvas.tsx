@@ -1,5 +1,3 @@
-"use client";
-
 import { Scene } from "@babylonjs/core/scene";
 import { Engine } from "@babylonjs/core/Engines/engine";
 import {
