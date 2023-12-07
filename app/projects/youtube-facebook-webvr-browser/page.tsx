@@ -14,8 +14,7 @@ export default function YouTubeFacebookWebVrProject() {
         loop
       />
       <p className="italic mb-9">
-        Navigating YouTube subscribed to channels & Facebook pages with gaze
-        interactions
+        Navigating YouTube subscriptions & Facebook pages with gaze interactions
       </p>
 
       <section className="mb-5">
