@@ -16,14 +16,12 @@ import {
 import { usePathname } from "next/navigation";
 
 import clsx from "clsx";
+import { mergeNewValuesIntoState } from "../lib/reducers/mergeNewValuesIntoState";
 
 type Runtime = { engine: Engine; scene: Scene };
 export function Canvas({ children }: { children: ReactNode }) {
   const [{ scene, engine }, setRuntime] = useReducer(
-    (state: Partial<Runtime>, newValues: Partial<Runtime>) => ({
-      ...state,
-      ...newValues,
-    }),
+    mergeNewValuesIntoState<Runtime>,
     {},
   );
 

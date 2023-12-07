@@ -7,6 +7,7 @@ import { Model } from "./Model";
 import { Card } from "./Card";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { Background } from "./Background";
+import { Panel } from "./Panel";
 
 export default function Office() {
   return (
@@ -16,6 +17,11 @@ export default function Office() {
       <Background color="#425c87" />
       <DefaultEnvironment color="#1e3a8a">
         <Model url="/models/desk.glb" rotation={new Vector3(0, Math.PI / 2)} />
+        <Panel
+          scaling={new Vector3(2, 2.5, 1)}
+          position={new Vector3(-4, 2.5, -1)}
+          rotation={new Vector3(0, -Math.PI / 2, 0)}
+        />
         <Card
           type="video"
           title="WebVR World Editor"

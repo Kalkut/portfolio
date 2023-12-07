@@ -14,6 +14,8 @@ import { InterpolateValueAction } from "@babylonjs/core/Actions/interpolateValue
 import { AdvancedDynamicTexture } from "@babylonjs/gui/2D/advancedDynamicTexture";
 import { TextBlock } from "@babylonjs/gui/2D/controls/textBlock";
 import { Rectangle } from "@babylonjs/gui/2D/controls/rectangle";
+import { mergeNewValuesIntoState } from "../lib/reducers/mergeNewValuesIntoState";
+import { ParentNodeContext } from "./contexts/parentNode";
 
 export function Card({
   title,
@@ -28,8 +30,22 @@ export function Card({
   position?: Vector3;
   rotation?: Vector3;
 }) {
-  const [{ texture, textBlock, mesh }, dispatch] = useReducer(reducer, {});
+  type CardState = Partial<{
+    texture: Texture;
+    mesh: Mesh;
+    textBlock: TextBlock;
+  }>;
+  const [{ texture, textBlock, mesh }, dispatch] = useReducer(
+    mergeNewValuesIntoState<CardState>,
+    {},
+  );
   const scene = useContext(SceneContext);
+  const parentNode = useContext(ParentNodeContext);
+
+  useEffect(() => {
+    if (!parentNode || !mesh) return;
+    mesh.parent = parentNode;
+  }, [parentNode, mesh]);
 
   // Texture Load
   useEffect(() => {
@@ -169,17 +185,4 @@ function makeCardHoverable(backdrop: Mesh, scene: Scene) {
   actionManager.registerAction(hover);
   actionManager.registerAction(blur);
   backdrop.actionManager = actionManager;
-}
-
-type CardState = Partial<{
-  texture: Texture;
-  mesh: Mesh;
-  textBlock: TextBlock;
-}>;
-
-function reducer(state: CardState, valuesToUpdate: CardState) {
-  return {
-    ...state,
-    ...valuesToUpdate,
-  };
 }
