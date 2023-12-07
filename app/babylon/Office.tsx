@@ -20,38 +20,78 @@ export default function Office() {
         <Panel
           title="2016"
           width={2}
-          height={2}
-          position={new Vector3(-2.5, 5, 2)}
+          height={1.75}
+          position={new Vector3(-1.5, 7, 2)}
         >
           <Card
             type="video"
             title="Social WebVR Experiment"
             preview="/videos/social_webvr_experiment/multiplayer.mp4"
+            position={new Vector3(0, -0.15, 0)}
           />
         </Panel>
         <Panel
           title="2017"
-          width={5}
-          height={2}
-          position={new Vector3(1.5, 5, 2)}
+          width={4.5}
+          height={1.75}
+          position={new Vector3(2, 7, 2)}
         >
           <Card
             type="video"
             title="YouTube/Facebook WebVR Browser"
             preview="/videos/browser/navigation.mp4"
-            position={new Vector3(-1.25, 0, 0)}
+            position={new Vector3(-1.25, -0.15, 0)}
           />
-          {/* <Card
-            type="video"
-            title="Tiled WebVR World Editor"
-            preview="/videos/ground.mp4"
-            position={new Vector3(0, -0.7, 0)}
-          /> */}
+
           <Card
             type="image"
             title="Proto Social WebVR"
             preview="/pictures/social.jpg"
-            position={new Vector3(1, 0, 0)}
+            position={new Vector3(1, -0.15, 0)}
+          />
+        </Panel>
+        <Panel
+          title="2018"
+          width={4}
+          height={1.75}
+          position={new Vector3(-0.5, 5, 2)}
+        >
+          <Card
+            type="video"
+            title="Tiled WebVR World Editor"
+            preview="/videos/ground.mp4"
+            position={new Vector3(-1, -0.15, 0)}
+          />
+          <Card
+            type="video"
+            title="Spatial Reddit"
+            preview="/videos/reddit/reddit_inside.mp4"
+            position={new Vector3(1, -0.15, 0)}
+          />
+        </Panel>
+        <Panel
+          title="2019"
+          width={2}
+          height={4}
+          position={new Vector3(3, 3.88, 2)}
+        >
+          <Card
+            type="video"
+            title="WebxR City Builder"
+            preview="/videos/world/world_edition.mp4"
+            position={new Vector3(0, 1, 0)}
+          />
+          <Card
+            type="video"
+            title="NPC Editor"
+            preview="/videos/npc/dialog_editor.mp4"
+            position={new Vector3(0, -0.1, 0)}
+          />
+          <Card
+            type="video"
+            title="Building Editor"
+            preview="/videos/house_builder.mp4"
+            position={new Vector3(0, -1.25, 0)}
           />
         </Panel>
 

@@ -104,15 +104,16 @@ function attachAdvancedDynamicTexture(mesh: Mesh, width = 1, height = 1) {
   // rectangle.horizontalAlignment = Rectangle.HORIZONTAL_ALIGNMENT_LEFT;
   // rectangle.verticalAlignment = Rectangle.VERTICAL_ALIGNMENT_TOP;
 
+  const fontSize = 256;
   const textBlock = new TextBlock();
   textBlock.textWrapping = true;
-  textBlock.horizontalAlignment = TextBlock.HORIZONTAL_ALIGNMENT_LEFT;
-  textBlock.verticalAlignment = TextBlock.VERTICAL_ALIGNMENT_TOP;
-  textBlock.top = "-40%";
-  textBlock.leftInPixels = -0.4 * canvasWidth;
+  // textBlock.horizontalAlignment = TextBlock.HORIZONTAL_ALIGNMENT_LEFT;
+  // textBlock.verticalAlignment = TextBlock.VERTICAL_ALIGNMENT_TOP;
+  textBlock.fontSizeInPixels = fontSize;
+  textBlock.topInPixels = -0.5 * canvasHeight + fontSize;
+  // textBlock.leftInPixels = -0.4 * canvasWidth;
   textBlock.color = "white";
-  textBlock.fontSize = "7%";
-  // textBlock.heightInPixels = 200;
+  // textBlock.heightInPixels = 128;
   advancedTexture.addControl(textBlock);
 
   return textBlock;
