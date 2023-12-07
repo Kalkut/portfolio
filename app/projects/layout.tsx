@@ -70,23 +70,25 @@ export default function ProjectsLayout({
         <h1 className="mb-6 text-2xl font-black flex justify-between p-4 pb-0">
           Projects <BackToHome />
         </h1>
-        <menu className="px-4 pb-8 shrink overflow-auto">
-          {projectsGroupedByYear.reduce<ReactNode[]>(
-            (nodes, { year, projects }) => {
-              return [
-                ...nodes,
-                <Divider key={year}>{year}</Divider>,
-                projects.map(({ name, id }) => (
-                  <li className="flex justify-center mb-1" key={id}>
-                    <Link href={`/projects/${id}`}>{name}</Link>
-                  </li>
-                )),
-              ];
-            },
-            [],
-          )}
-        </menu>
-        {/* <div className="overflow-auto">{children}</div> */}
+        <div className="overflow-auto">
+          <menu className="px-4 pb-8 shrink">
+            {projectsGroupedByYear.reduce<ReactNode[]>(
+              (nodes, { year, projects }) => {
+                return [
+                  ...nodes,
+                  <Divider key={year}>{year}</Divider>,
+                  projects.map(({ name, id }) => (
+                    <li className="flex justify-center mb-1" key={id}>
+                      <Link href={`/projects/${id}`}>{name}</Link>
+                    </li>
+                  )),
+                ];
+              },
+              [],
+            )}
+          </menu>
+          <div>{children}</div>
+        </div>
       </div>
     </div>
   );
@@ -116,13 +118,12 @@ function BackToHome() {
 function Divider({ children }: { children: string }) {
   return (
     <div className="relative mb-2">
-      <div className="absolute inset-0 flex items-center" aria-hidden="true">
-        <div className="w-full border-t border-gray-300" />
-      </div>
-      <div className="relative flex justify-center">
-        <span className="bg-white px-3 text-base font-semibold leading-6 text-gray-900">
+      <div className=" inset-0 flex items-center" aria-hidden="true">
+        <div className="border-t grow border-gray-300" />
+        <span className=" px-3 text-base font-semibold leading-6 text-gray-900">
           {children}
         </span>
+        <div className=" border-t grow border-gray-300" />
       </div>
     </div>
   );
