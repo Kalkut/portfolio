@@ -3,7 +3,7 @@ import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 import { Texture } from "@babylonjs/core/Materials/Textures/texture";
-import { useContext, useEffect, useReducer } from "react";
+import { useCallback, useContext, useEffect, useReducer } from "react";
 import { SceneContext } from "./Canvas";
 import { VideoTexture } from "@babylonjs/core/Materials/Textures/videoTexture";
 import { ActionManager } from "@babylonjs/core/Actions/actionManager";
@@ -16,14 +16,17 @@ import { TextBlock } from "@babylonjs/gui/2D/controls/textBlock";
 import { Rectangle } from "@babylonjs/gui/2D/controls/rectangle";
 import { mergeNewValuesIntoState } from "../lib/reducers/mergeNewValuesIntoState";
 import { ParentNodeContext } from "./contexts/parentNode";
+import { useRouter } from "next/navigation";
 
 export function Card({
   title,
   type,
+  href,
   preview,
   position = Vector3.ZeroReadOnly,
   rotation = Vector3.ZeroReadOnly,
 }: {
+  href?: string;
   title: string;
   preview: string;
   type: "image" | "video";
@@ -33,14 +36,27 @@ export function Card({
   type CardState = Partial<{
     texture: Texture;
     mesh: Mesh;
+    actionManager: ActionManager;
     textBlock: TextBlock;
   }>;
-  const [{ texture, textBlock, mesh }, dispatch] = useReducer(
+  const [{ texture, textBlock, mesh, actionManager }, dispatch] = useReducer(
     mergeNewValuesIntoState<CardState>,
     {},
   );
   const scene = useContext(SceneContext);
   const parentNode = useContext(ParentNodeContext);
+  const router = useRouter();
+
+  const goToLinkHref = useCallback(() => {
+    if (href) router.push(href);
+  }, [router, href]);
+
+  useEffect(() => {
+    if (actionManager) {
+      const removeClickEvent = makeCardClickable(actionManager, goToLinkHref);
+      return removeClickEvent;
+    }
+  }, [goToLinkHref, actionManager]);
 
   useEffect(() => {
     if (!parentNode || !mesh) return;
@@ -82,11 +98,21 @@ export function Card({
     );
     _backdrop.setParent(_mesh);
     _backdrop.position.z = -0.001;
-    makeCardHoverable(_backdrop, scene);
-    dispatch({ mesh: _mesh, textBlock: _textBlock });
+
+    const { removeEvents, actionManager: _actionManager } = makeCardHoverable(
+      _backdrop,
+      scene,
+    );
+
+    dispatch({
+      mesh: _mesh,
+      textBlock: _textBlock,
+      actionManager: _actionManager,
+    });
 
     return () => {
       _mesh.dispose();
+      removeEvents();
       _backdrop.dispose();
     };
   }, [scene, texture]);
@@ -185,4 +211,27 @@ function makeCardHoverable(backdrop: Mesh, scene: Scene) {
   actionManager.registerAction(hover);
   actionManager.registerAction(blur);
   backdrop.actionManager = actionManager;
+
+  return {
+    actionManager,
+    removeEvents: () => {
+      actionManager.unregisterAction(hover);
+      actionManager.unregisterAction(blur);
+    },
+  };
+}
+
+function makeCardClickable(
+  backdropActionManager: ActionManager,
+  goToLinkHref: () => void,
+) {
+  const followLink = new ExecuteCodeAction(ActionManager.OnPickUpTrigger, () =>
+    goToLinkHref(),
+  );
+
+  backdropActionManager.registerAction(followLink);
+
+  return () => {
+    backdropActionManager.unregisterAction(followLink);
+  };
 }

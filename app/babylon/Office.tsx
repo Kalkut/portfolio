@@ -27,6 +27,7 @@ export default function Office() {
           <Card
             type="video"
             title="Social WebVR Experiment"
+            href="/projects/social-webvr-experiment"
             preview="/videos/social_webvr_experiment/multiplayer.mp4"
             position={new Vector3(0, -0.15, 0)}
           />
