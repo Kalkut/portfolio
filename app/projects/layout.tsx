@@ -67,7 +67,7 @@ export default function ProjectsLayout({
   return (
     <div className="absolute left-0 top-0 w-full h-full xl:bg-white/80 bg-white xl:w-1/3">
       <div className="flex flex-col h-full w-full">
-        <h1 className="mb-6 text-2xl font-black flex justify-between p-4 pb-0">
+        <h1 className="mb-6 text-2xl font-black flex justify-between p-4 2xl:pt-8 2xl:px-8 pb-0">
           Projects <BackToHome />
         </h1>
         <div className="overflow-auto">
