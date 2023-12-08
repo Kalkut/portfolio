@@ -31,7 +31,7 @@ export function Canvas({ children }: { children: ReactNode }) {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const _engine = new Engine(canvas, true, { antialias: true });
+    const _engine = new Engine(canvas, true, undefined, true);
     const _scene = new Scene(_engine);
 
     setRuntime({ scene: _scene, engine: _engine });
