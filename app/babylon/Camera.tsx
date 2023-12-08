@@ -4,12 +4,14 @@ import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import { SceneContext } from "./Canvas";
 import { Scene } from "@babylonjs/core/scene";
 import { UniversalCamera } from "@babylonjs/core/Cameras/universalCamera";
+import { CameraInputTypes } from "@babylonjs/core/Cameras/cameraInputsManager";
+import { FreeCamera } from "@babylonjs/core";
 
 export function Camera() {
   const scene = useContext(SceneContext);
 
   useEffect(() => {
-    const destroyCamera = createUniversalCamera(scene);
+    const destroyCamera = createArcRotateCamera(scene);
     return destroyCamera;
   }, [scene]);
 
@@ -17,24 +19,30 @@ export function Camera() {
 }
 
 function createArcRotateCamera(scene: Scene) {
-  const initialAlpha = (-0.75 * Math.PI) / 2;
-  const initialBeta = (0.75 * Math.PI) / 2;
-  const angularRadius = (0.15 * Math.PI) / 2;
+  const initialAlpha = (3 * Math.PI) / 2;
+  const initialBeta = (0.8 * Math.PI) / 2;
+  const angularRadius = Math.PI / 4;
   const camera = new ArcRotateCamera(
     "camera",
-    initialAlpha,
-    initialBeta,
-    20,
-    new Vector3(0.5, 2, 0.5),
+    0,
+    0,
+    0,
+    new Vector3(0, 1.5, -1.6),
     scene,
   );
+
+  camera.minZ = 0.01;
+  camera.position = new Vector3(0, 1.5, -1.6);
+  camera.alpha = initialAlpha;
+  camera.beta = initialBeta;
+  console.log(camera, "camera");
   camera.attachControl();
-  camera.lowerRadiusLimit = 10;
-  camera.upperRadiusLimit = 15;
+  camera.lowerRadiusLimit = 0;
+  camera.upperRadiusLimit = 0;
   camera.lowerAlphaLimit = initialAlpha - angularRadius;
   camera.upperAlphaLimit = initialAlpha + angularRadius;
-  camera.lowerBetaLimit = initialBeta - angularRadius;
-  camera.upperBetaLimit = initialBeta + angularRadius;
+  camera.lowerBetaLimit = initialBeta - 0.35 * angularRadius;
+  camera.upperBetaLimit = initialBeta + 0.35 * angularRadius;
 
   return () => {
     camera.dispose();
@@ -42,11 +50,10 @@ function createArcRotateCamera(scene: Scene) {
 }
 
 function createUniversalCamera(scene: Scene) {
-  const camera = new UniversalCamera(
-    "camera",
-    new Vector3(0, 1.5, -1.6),
-    scene,
-  );
+  const camera = new FreeCamera("camera", new Vector3(0, 1.5, -1.6), scene);
+  camera.inputs.remove(camera.inputs.attached.keyboard);
+  camera.inputs.remove(camera.inputs.attached.gamepad);
+
   camera.attachControl();
 
   return () => {
