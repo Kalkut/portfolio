@@ -68,10 +68,13 @@ export default function ProjectsLayout({
     <div className="absolute left-0 top-0 w-full h-full xl:bg-white/80 bg-white xl:w-1/3">
       <div className="flex flex-col h-full w-full">
         <h1 className="mb-6 text-2xl font-black flex justify-between p-4 2xl:pt-8 2xl:px-8 pb-0">
-          Projects <BackToHome />
+          <a href="#projects" className="cursor-pointer">
+            Projects
+          </a>{" "}
+          <BackToHome />
         </h1>
-        <div className="overflow-auto">
-          <menu className="px-4 pb-8 shrink">
+        <div className="overflow-auto scroll-smooth">
+          <menu id="projects" className="px-4 pb-8 shrink">
             {projectsGroupedByYear.reduce<ReactNode[]>(
               (nodes, { year, projects }) => {
                 return [
