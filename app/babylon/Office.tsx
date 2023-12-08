@@ -42,6 +42,7 @@ export default function Office() {
             type="video"
             title="YouTube/Facebook WebVR Browser"
             preview="/videos/browser/navigation.mp4"
+            href="/projects/youtube-facebook-webvr-browser"
             position={new Vector3(-1.25, -0.15, 0)}
           />
 
@@ -49,6 +50,7 @@ export default function Office() {
             type="image"
             title="Proto Social WebVR"
             preview="/pictures/social.jpg"
+            href="/projects/social-webvr-proto"
             position={new Vector3(1, -0.15, 0)}
           />
         </Panel>
@@ -62,12 +64,14 @@ export default function Office() {
             type="video"
             title="Tiled WebVR World Editor"
             preview="/videos/ground.mp4"
+            href="/projects/tiled-world-editor"
             position={new Vector3(-1, -0.15, 0)}
           />
           <Card
             type="video"
             title="Spatial Reddit"
             preview="/videos/reddit/reddit_inside.mp4"
+            href="/projects/spatial-reddit"
             position={new Vector3(1, -0.15, 0)}
           />
         </Panel>
@@ -81,17 +85,20 @@ export default function Office() {
             type="video"
             title="WebxR City Builder"
             preview="/videos/world/world_edition.mp4"
+            href="/projects/webxr-city-builder"
             position={new Vector3(-2, -0.15, 0)}
           />
           <Card
             type="video"
             title="NPC Editor"
+            href="/projects/npc-editor"
             preview="/videos/npc/dialog_editor.mp4"
             position={new Vector3(0, -0.15, 0)}
           />
           <Card
             type="video"
             title="Building Editor"
+            href="/projects/building-editor"
             preview="/videos/house_builder.mp4"
             position={new Vector3(2, -0.15, 0)}
           />
@@ -107,12 +114,14 @@ export default function Office() {
             type="video"
             title="WebXR Space Editor"
             preview="/videos/environment.mp4"
+            href="/projects/webxr-space-editor"
             position={new Vector3(-0.65, -0.15, 0)}
           />
           <Card
             type="video"
             title="WebXR PDF Reader"
             preview="/videos/pdf_reader.mp4"
+            href="/projects/webxr-pdf-reader"
             position={new Vector3(1, -0.15, 0)}
           />
         </Panel>
@@ -126,6 +135,7 @@ export default function Office() {
           <Card
             type="video"
             title="Google Drive WebXR Client"
+            href="/projects/webxr-google-drive-client"
             preview="/videos/google_drive_client.mp4"
             position={new Vector3(0, -0.15, 0)}
           />
