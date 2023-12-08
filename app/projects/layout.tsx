@@ -82,7 +82,7 @@ export default function ProjectsLayout({
                   <Divider key={year}>{year}</Divider>,
                   projects.map(({ name, id }) => (
                     <li className="flex justify-center mb-1" key={id}>
-                      <Link href={`/projects/${id}`}>{name}</Link>
+                      <Link href={`/projects/${id}#description`}>{name}</Link>
                     </li>
                   )),
                 ];
@@ -90,7 +90,7 @@ export default function ProjectsLayout({
               [],
             )}
           </menu>
-          <div>{children}</div>
+          <div id="description">{children}</div>
         </div>
       </div>
     </div>

@@ -135,7 +135,8 @@ export default function Office() {
           title="2022"
           width={2}
           height={1.75}
-          position={new Vector3(-0.075, 1.275, 0.25)}
+          rotation={new Vector3((0.75 * Math.PI) / 2)}
+          position={new Vector3(0.2, 1, -0.45)}
         >
           <Card
             type="video"

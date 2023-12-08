@@ -1,10 +1,5 @@
 import Link from "next/link";
 
-const projects = [
-  { name: "Proto Social WebVR", id: "social-webvr-proto" },
-  { name: "Social WebVR Experiment", id: "social-webvr-experiment" },
-];
-
 export default function ProjectsLayout({
   children,
 }: {
@@ -12,17 +7,11 @@ export default function ProjectsLayout({
 }) {
   return (
     <div className="absolute left-0 top-0 w-full h-full xl:bg-white/80 bg-white flex flex-col xl:w-1/3">
-      <h1 className="mb-6 text-2xl font-black flex justify-between p-4 pb-0">
-        Projects <BackToHome />
+      <h1 className="mb-6 text-2xl font-black flex justify-between p-4 2xl:pt-8 2xl:px-8 pb-0">
+        About
+        <BackToHome />
       </h1>
-      <ul className="px-4 mb-6">
-        {projects.map(({ name, id }) => (
-          <li key={id}>
-            <Link href={`/projects/${id}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
-      {children}
+      <div className="pt-0 2xl:px-8 2xl:pb-8 p-4 overflow-auto">{children}</div>
     </div>
   );
 }

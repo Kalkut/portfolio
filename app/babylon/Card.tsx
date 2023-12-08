@@ -48,7 +48,7 @@ export function Card({
   const router = useRouter();
 
   const goToLinkHref = useCallback(() => {
-    if (href) router.push(href);
+    if (href) router.push(`${href}#description`);
   }, [router, href]);
 
   useEffect(() => {
@@ -225,7 +225,7 @@ function makeCardClickable(
   backdropActionManager: ActionManager,
   goToLinkHref: () => void,
 ) {
-  const followLink = new ExecuteCodeAction(ActionManager.OnPickUpTrigger, () =>
+  const followLink = new ExecuteCodeAction(ActionManager.OnPickTrigger, () =>
     goToLinkHref(),
   );
 
