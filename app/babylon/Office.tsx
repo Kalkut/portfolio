@@ -22,7 +22,8 @@ export default function Office() {
           title="2016"
           width={2}
           height={1.75}
-          position={new Vector3(-1.5, 7, 2)}
+          rotation={new Vector3(0, -Math.PI / 4)}
+          position={new Vector3(-1.2, 1.05, -0.25)}
         >
           <Card
             type="video"
@@ -36,7 +37,8 @@ export default function Office() {
           title="2017"
           width={4.5}
           height={1.75}
-          position={new Vector3(2, 7, 2)}
+          rotation={new Vector3(Math.PI / 12, -Math.PI / 8)}
+          position={new Vector3(-0.75, 1.05, -0.2)}
         >
           <Card
             type="video"
@@ -58,7 +60,8 @@ export default function Office() {
           title="2018"
           width={4}
           height={1.75}
-          position={new Vector3(-0.5, 5, 2)}
+          rotation={new Vector3(Math.PI / 12, Math.PI / 8)}
+          position={new Vector3(0.5, 1.05, 0)}
         >
           <Card
             type="video"
@@ -79,7 +82,8 @@ export default function Office() {
           title="2019"
           width={6}
           height={1.75}
-          position={new Vector3(4.75, 5, 2)}
+          rotation={new Vector3(Math.PI / 12, Math.PI / 5)}
+          position={new Vector3(1, 1.05, -0.3)}
         >
           <Card
             type="video"
@@ -108,7 +112,8 @@ export default function Office() {
           title="2021"
           width={3.5}
           height={1.75}
-          position={new Vector3(-0.25, 3, 2)}
+          rotation={new Vector3((0.75 * Math.PI) / 2)}
+          position={new Vector3(-0.1, 1, -0.45)}
         >
           <Card
             type="video"
@@ -130,7 +135,7 @@ export default function Office() {
           title="2022"
           width={2}
           height={1.75}
-          position={new Vector3(3, 3, 2)}
+          position={new Vector3(-0.075, 1.275, 0.25)}
         >
           <Card
             type="video"

@@ -5,7 +5,7 @@ export function Lights() {
   const scene = useContext(SceneContext);
 
   useEffect(() => {
-    scene.createDefaultLight(true);
+    // scene.createDefaultLight(true);
   }, [scene]);
 
   return null;

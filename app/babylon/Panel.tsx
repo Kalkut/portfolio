@@ -78,6 +78,7 @@ export function Panel({
 
 function createPanelMesh(scene: Scene, width?: number, height?: number) {
   const mesh = MeshBuilder.CreatePlane("Card", { width, height }, scene);
+  mesh.scaling.scaleInPlace(0.1);
   return mesh;
 }
 
