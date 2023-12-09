@@ -44,8 +44,9 @@ export function Model({
 
   // On Destroy
   useEffect(() => {
+    if (!mesh) return;
     return () => {
-      mesh?.dispose(true, true);
+      mesh.dispose(true, true);
     };
   }, [mesh]);
 

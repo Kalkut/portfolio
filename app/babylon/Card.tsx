@@ -58,10 +58,10 @@ export function Card({
     }
   }, [goToLinkHref, actionManager]);
 
-  useEffect(() => {
-    if (!parentNode || !mesh) return;
-    mesh.parent = parentNode;
-  }, [parentNode, mesh]);
+  // useEffect(() => {
+  //   if (!parentNode || !mesh) return;
+  //   mesh.parent = parentNode;
+  // }, [parentNode, mesh]);
 
   // Texture Load
   useEffect(() => {
@@ -104,6 +104,8 @@ export function Card({
       scene,
     );
 
+    if (parentNode) _mesh.parent = parentNode;
+
     dispatch({
       mesh: _mesh,
       textBlock: _textBlock,
@@ -115,7 +117,7 @@ export function Card({
       removeEvents();
       _backdrop.dispose();
     };
-  }, [scene, texture]);
+  }, [scene, texture, parentNode]);
 
   // Transform update
   useEffect(() => {
