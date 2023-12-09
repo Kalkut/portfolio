@@ -52,8 +52,9 @@ export default function WebXRCityBuilder() {
         </p>
         <p className="mb-2">
           It gave me good a understanding of what kind of experiences/games can
-          be built build with those assets, and as far as low poly goes I don't
-          see a limit on the kind or the scope of what can be achieved.
+          be built build with those assets, and as far as low poly goes I
+          don&apos;t see a limit on the kind or the scope of what can be
+          achieved.
         </p>
         <p className="mb-2">
           I had to focus on working for customers, I paused the developement of

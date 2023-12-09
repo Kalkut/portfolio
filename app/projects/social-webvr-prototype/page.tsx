@@ -40,9 +40,9 @@ export default function SocialWebVRPrototype() {
           I demoed this project multiple times but I just did not believe in it
           at this point. I saw more and more native SocialVR apps, some of which
           were as well done and innovative as possible at the time and I loved
-          none of them. I just accepted that I just don't like Social VR and
-          moved on. I decided to focus on the creative potential of VR by making
-          an{" "}
+          none of them. I just accepted that I just don&apos;t like Social VR
+          and moved on. I decided to focus on the creative potential of VR by
+          making an{" "}
           <Link className="underline" href="/projects/tiled-world-editor">
             environment editor
           </Link>

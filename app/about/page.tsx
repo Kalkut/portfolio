@@ -24,7 +24,7 @@ export default function About() {
       </section>
       <section>
         <h4 className="font-semibold mb-3">
-          What's up with all the 3D and VR ?
+          What&apos;s up with all the 3D and VR ?
         </h4>
         <p className="mb-2">
           I am intrigued by the idea of virtual reality since I was a kid. I
@@ -32,11 +32,11 @@ export default function About() {
           2010s though.
         </p>
         <p className="mb-2">
-          Mid-2015, I was lucky enough to try a friend's Oculus DK2 and even
-          though the tech was still experimental, it seemed to me there that was
-          a good enough base for a new wave of VR software. I did not think much
-          of it at first since I was just a junior web dev already trying his
-          best to get good at his craft.
+          Mid-2015, I was lucky enough to try a friend&apos;s Oculus DK2 and
+          even though the tech was still experimental, it seemed to me there
+          that was a good enough base for a new wave of VR software. I did not
+          think much of it at first since I was just a junior web dev already
+          trying his best to get good at his craft.
         </p>
         <p className="mb-2">
           In 2016 another friend of mine taught me about{" "}

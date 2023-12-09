@@ -80,9 +80,9 @@ export default function YouTubeFacebookWebVrProject() {
             >
               trying to build a social VR app
             </Link>
-            . Also the project's use of youtube-dl was not sustainable as it was
-            against YouTube TOS so I killed it. In retrospect I could have
-            pivoted this project toward a more generic VR online media
+            . Also the project&apos;s use of youtube-dl was not sustainable as
+            it was against YouTube TOS so I killed it. In retrospect I could
+            have pivoted this project toward a more generic VR online media
             consumption platform, but I guess hindsight truly is 20/20.
           </p>
         </section>

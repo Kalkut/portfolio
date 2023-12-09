@@ -86,9 +86,9 @@ export default function SocialWebVrExperiment() {
             ></video>
             <figcaption>
               <em>
-                The user can drop a media "screen" on which they can search for
-                a YouTube video. Behold the ✨ dazzling ✨ custom made keyboard
-                !
+                The user can drop a media &quot;screen&quot; on which they can
+                search for a YouTube video. Behold the ✨ dazzling ✨ custom
+                made keyboard !
               </em>
             </figcaption>
           </figure>
@@ -127,9 +127,9 @@ export default function SocialWebVrExperiment() {
             bleeding-edge frameworks and web APIs. After months of continuous
             refinement and accumulating experience, I realized I needed to
             change my approach. The project was too ambitious given my skill
-            level, and mobile VR wasn't sufficient, mainly due to the lack of
-            controllers. I repurposed some of the logic from the YouTube player
-            and instead created a{" "}
+            level, and mobile VR wasn&apos;t sufficient, mainly due to the lack
+            of controllers. I repurposed some of the logic from the YouTube
+            player and instead created a{" "}
             <Link
               className="underline"
               href="/projects/youtube-facebook-webvr-browser#description"

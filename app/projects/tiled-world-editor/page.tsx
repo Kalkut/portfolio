@@ -38,15 +38,22 @@ export default function TiledWebVRWorldEditor() {
         <p>
           The editor is a multistep tool where at first the user is presented
           with a 10 square meters ground they can resize and paint textures and
-          colors on. A building's is created by resizing and drawing on a box,
-          and a building is just a set of room
+          colors on. A building&apos;s is created by resizing and drawing on a
+          box, and a building is just a set of room
         </p>
       </section>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Outcome</h4>
         <p className="mb-1.5">
-          I was unconvinced by the approach, to me this was leading me to
-          nowhere. I killed it with no ceremony and moved on to a{" "}
+          I was unconvinced by the approach. This was leading me nowhere. I
+          killed it with no ceremony, tried{" "}
+          <Link
+            className="underline"
+            href="/projects/spatial-reddit#description"
+          >
+            an "avant-gardiste" spin on social media browsing
+          </Link>{" "}
+          then moved on from both and worked on a{" "}
           <Link
             className="underline"
             href="/projects/webxr-city-builder#description"

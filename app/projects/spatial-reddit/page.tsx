@@ -105,7 +105,8 @@ export default function SpatialReddit() {
 
           <blockquote className="mb-6 text-gray-600 bg-white/40 italic p-4">
             <p className="mb-1.5">
-              I think it's a great idea that just needs to be polished more.
+              I think it&apos;s a great idea that just needs to be polished
+              more.
             </p>
           </blockquote>
 
