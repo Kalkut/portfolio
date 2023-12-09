@@ -37,6 +37,8 @@ function createArcRotateCamera(scene: Scene) {
   camera.beta = initialBeta;
   console.log(camera, "camera");
   camera.attachControl();
+  camera.inputs.remove(camera.inputs.attached.keyboard);
+  camera.inputs.remove(camera.inputs.attached.gamepad);
   camera.angularSensibilityX = 2500;
   camera.panningSensibility = 0;
   camera.lowerRadiusLimit = 0;
