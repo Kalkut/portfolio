@@ -72,7 +72,7 @@ export default function WebXrSpaceEditor() {
             muted
             autoPlay
             loop
-            src="/videos/reddit_flat.webm"
+            src="/videos/reddit_flat.mp4"
           ></video>
           <figcaption>
             <em>
