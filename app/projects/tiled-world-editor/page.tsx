@@ -51,7 +51,7 @@ export default function TiledWebVRWorldEditor() {
             className="underline"
             href="/projects/spatial-reddit#description"
           >
-            an "avant-gardiste" spin on social media browsing
+            an &quot;avant-gardiste&quot; spin on social media browsing
           </Link>{" "}
           then moved on from both and worked on a{" "}
           <Link
