@@ -37,6 +37,8 @@ function createArcRotateCamera(scene: Scene) {
   camera.beta = initialBeta;
   console.log(camera, "camera");
   camera.attachControl();
+  camera.angularSensibilityX = 2500;
+  camera.panningSensibility = 0;
   camera.lowerRadiusLimit = 0;
   camera.upperRadiusLimit = 0;
   camera.lowerAlphaLimit = initialAlpha - angularRadius;
