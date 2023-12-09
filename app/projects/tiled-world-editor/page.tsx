@@ -4,7 +4,7 @@ export default function TiledWebVRWorldEditor() {
   return (
     <section className="px-4">
       <h2 className="text-xl font-semibold">Tiled WebVR World Editor</h2>
-      <h3 className="italic mb-6">2017/2018 - Discontinued</h3>
+      <h3 className="italic mb-6">2017/2018</h3>
       <video
         className="mb-4"
         src="/videos/ground.mp4"
@@ -22,8 +22,8 @@ export default function TiledWebVRWorldEditor() {
           </Link>
           , I wanted to focus on 3D world edition. The first step was to have a
           tool a user could create a ground, a room and then a building with. I
-          choose to divide surfaces (ground, walls, ceilings) in tiles on which
-          a user would draw high quality{" "}
+          choose to divide surfaces (ground, walls, ceilings) into tiles on
+          which a user would draw high quality{" "}
           <a
             className="underline"
             href="https://en.wikipedia.org/wiki/Physically_based_rendering"
@@ -47,7 +47,10 @@ export default function TiledWebVRWorldEditor() {
         <p className="mb-1.5">
           I was unconvinced by the approach, to me this was leading me to
           nowhere. I killed it with no ceremony and moved on to a{" "}
-          <Link className="underline" href="/projects/building_editor">
+          <Link
+            className="underline"
+            href="/projects/webxr-city-builder#description"
+          >
             new approach on world editing
           </Link>
         </p>
@@ -55,9 +58,9 @@ export default function TiledWebVRWorldEditor() {
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Technical stack</h4>
         <ul>
-          <li>React</li>
-          <li>A-Frame, Three.js</li>
-          <li>Node.js</li>
+          <li>Front: React</li>
+          <li>3D: A-Frame, Three.js</li>
+          <li>Back: Node.js</li>
         </ul>
       </section>
     </section>

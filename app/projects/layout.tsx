@@ -1,23 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-const projects = [
-  { name: "Social WebVR Experiment", id: "social-webvr-experiment" },
-  {
-    name: "YouTube/Facebook WebVR Browser",
-    id: "youtube-facebook-webvr-browser",
-  },
-  { name: "Proto Social WebVR", id: "social-webvr-proto" },
-  { name: "Tiled WebVR World Editor", id: "tiled-world-editor" },
-  { name: "WebXR City Builder", id: "webxr-city-builder" },
-  { name: "NPC Editor", id: "npc-editor" },
-  { name: "Building Editor", id: "building-editor" },
-  { name: "Spatial Reddit", id: "spatial-reddit" },
-  { name: "WebXR Space Editor", id: "webxr-space-editor" },
-  { name: "WebXR PDF Reader", id: "webxr-pdf-reader" },
-  { name: "WebXR Google Drive Client", id: "webxr-google-drive-client" },
-];
-
 const projects_2016 = [
   { name: "Social WebVR Experiment", id: "social-webvr-experiment" },
 ];
@@ -27,7 +10,7 @@ const projects_2017 = [
     name: "YouTube/Facebook WebVR Browser",
     id: "youtube-facebook-webvr-browser",
   },
-  { name: "Proto Social WebVR", id: "social-webvr-proto" },
+  { name: "Social WebVR Prototype", id: "social-webvr-prototype" },
 ];
 
 const projects_2018 = [
@@ -73,7 +56,7 @@ export default function ProjectsLayout({
           </a>{" "}
           <BackToHome />
         </h1>
-        <div className="overflow-auto scroll-smooth">
+        <div className="overflow-auto">
           <menu id="projects" className="px-4 pb-8 shrink">
             {projectsGroupedByYear.reduce<ReactNode[]>(
               (nodes, { year, projects }) => {

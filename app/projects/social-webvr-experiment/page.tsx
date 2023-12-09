@@ -4,7 +4,7 @@ export default function SocialWebVrExperiment() {
   return (
     <section className="px-4 py-6">
       <h2 className="text-xl font-semibold">Social WebVR Experiment</h2>
-      <h3 className="italic mb-6">2016 - Discontinued</h3>
+      <h3 className="italic mb-6">2016</h3>
       <video
         className="mb-4"
         src="/videos/social_webvr_experiment/multiplayer.mp4"
@@ -14,9 +14,10 @@ export default function SocialWebVrExperiment() {
         loop
       />
       <p className="italic mb-9">
-        Multiplayer editing : A user (a pink sphere here...) selects a color,
-        then a shape. Adds it to the world and ta-da! The other user sees it in
-        realtime
+        Multiplayer editing : A user (
+        <span className="text-pink-600">the pink sphere</span> here...) selects
+        <span className="text-yellow-600"> a color</span>, then a shape. Adds it
+        to the world and ta-da! The other user sees it in realtime.
       </p>
 
       <section className="mb-5">
@@ -61,21 +62,21 @@ export default function SocialWebVrExperiment() {
             Three.js
           </a>{" "}
           in a declarative way with DOM elements was the most common way of
-          building WebVR apps. The marketing hype behind the "Metaverse" had not
-          yet happened but it was basically the way too ambitious idea of this
-          first WebVR project of mine.
+          building WebVR apps. The marketing hype behind the{" "}
+          <em>Metaverse (™) </em> had not yet happened but it was basically the
+          way too ambitious idea behind this first WebVR project of mine.
         </section>
 
         <section>
           <h4 className="font-semibold mb-3">Concept</h4>
           <p className="mb-1.5">
-            <span>
-              The idea was to make a webapp where multiple users could spend
-              time and create an environment together where they could share
-              media content like watching YouTube videos.
-            </span>
+            The idea was to make a webapp where multiple users could spend time
+            creating a 3D environment together and sharing media content like
+            watching YouTube videos.
+          </p>
+          <figure className="my-8">
             <video
-              className="my-8"
+              className="mb-4"
               // className="w-2/5"
               controls
               muted
@@ -83,7 +84,14 @@ export default function SocialWebVrExperiment() {
               loop
               src="/videos/social_webvr_experiment/youtube.mp4"
             ></video>
-          </p>
+            <figcaption>
+              <em>
+                The user can drop a media "screen" on which they can search for
+                a YouTube video. Behold the ✨ dazzling ✨ custom made keyboard
+                !
+              </em>
+            </figcaption>
+          </figure>
           <p className="mb-1.5 flex flex-col-reverse">
             <video
               className="my-8"
@@ -95,9 +103,9 @@ export default function SocialWebVrExperiment() {
               src="/videos/social_webvr_experiment/building.mp4"
             ></video>
             <span>
-              The environment creation would be done using primitive shapes
-              likeboxes, sphere, cylinder and tools like extrusion and cropping
-              (hole making)
+              The environment creation is done using primitive shapes likeboxes,
+              sphere, cylinder and editing tools like extrusion and cropping
+              (hole cutting)
             </span>
           </p>
         </section>
@@ -114,21 +122,21 @@ export default function SocialWebVrExperiment() {
         <section className="mb-5">
           <h4 className="font-semibold mb-3">Outcome</h4>
           <p className="mb-1.5">
-            This project was my introductionary deep dive into 3D/VR
-            programming, it also helped me getting comfortable working with
-            bleeding edge frameworks and web APIs. Still after months of work
-            and rework, with all the experience I was gathering I knew I had to
-            change my approach. This was both too big of a project for the level
-            of skill I was at and mobile VR was not going to do the trick mostly
-            due to the lack of controllers. I reused part of the logic I built
-            in the YouTube player and developed a{" "}
+            This project marked my introductory deep dive into 3D/VR
+            programming. It familiarized me with the reality of working with
+            bleeding-edge frameworks and web APIs. After months of continuous
+            refinement and accumulating experience, I realized I needed to
+            change my approach. The project was too ambitious given my skill
+            level, and mobile VR wasn't sufficient, mainly due to the lack of
+            controllers. I repurposed some of the logic from the YouTube player
+            and instead created a{" "}
             <Link
               className="underline"
-              href="/projects/youtube-facebook-webvr-browser"
+              href="/projects/youtube-facebook-webvr-browser#description"
             >
-              Youtube/Facebook WebVR browser
-            </Link>{" "}
-            instead.
+              YouTube/Facebook WebVR browser
+            </Link>
+            .
           </p>
         </section>
       </section>
@@ -139,7 +147,7 @@ export default function SocialWebVrExperiment() {
           <li>Front: React, Redux</li>
           <li>3D/VR: A-Frame, Three.js</li>
           <li>Browser APIs: WebVR, MediaSource, WebSocket</li>
-          <li>Back: Node.js, Redis</li>
+          <li>Back: Node.js, RethinkDB, Redis</li>
         </ul>
       </section>
     </section>

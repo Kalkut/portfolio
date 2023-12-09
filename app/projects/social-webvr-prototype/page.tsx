@@ -4,7 +4,7 @@ export default function SocialWebVRPrototype() {
   return (
     <section className="px-4">
       <h2 className="text-xl font-semibold">Social WebVR Prototype</h2>
-      <h3 className="italic mb-6">2017 - Discontinued</h3>
+      <h3 className="italic mb-6">2017</h3>
       <img className="mb-9" src="/pictures/social.jpg" alt="" />
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Context</h4>
@@ -30,8 +30,8 @@ export default function SocialWebVRPrototype() {
           >
             Facebook Browser
           </Link>{" "}
-          so that users could share content. It also had a few new features like
-          room creation and sharing
+          so that users could share content from there. It also had a few new
+          features like room creation and sharing
         </p>
       </section>
       <section className="mb-5">
@@ -51,10 +51,10 @@ export default function SocialWebVRPrototype() {
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Technical stack</h4>
         <ul>
-          <li>React</li>
-          <li>A-Frame, Three.js</li>
-          <li>WebSocket API</li>
-          <li>Node.js</li>
+          <li>Front: React</li>
+          <li>3D: A-Frame, Three.js</li>
+          <li>Back: Node.js, Redis</li>
+          <li>Cloud/Infra: Google App Engine, Memorystore</li>
         </ul>
       </section>
     </section>

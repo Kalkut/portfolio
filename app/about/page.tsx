@@ -27,9 +27,9 @@ export default function About() {
           What's up with all the 3D and VR ?
         </h4>
         <p className="mb-2">
-          I was intrigued by the idea of virtual reality from a very young age.
-          I never thought that the technology would be viable as soon as the
-          early 2010s though.
+          I am intrigued by the idea of virtual reality since I was a kid. I
+          never thought that the technology would be viable as soon as the early
+          2010s though.
         </p>
         <p className="mb-2">
           Mid-2015, I was lucky enough to try a friend's Oculus DK2 and even
@@ -54,7 +54,7 @@ export default function About() {
           the web.
         </p>
         <p className="mb-2">
-          Since 2016 I split my time between full stack developement work for
+          Since then I split my time between full stack developement work for
           customers and experimentation with the web immersive technologies
         </p>
       </section>

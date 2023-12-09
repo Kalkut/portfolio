@@ -49,9 +49,10 @@ export default function WebXrGoogleDriveClient() {
         </p>
         <p className="mb-2">
           In order to make authenticated access to videos and images to Google
-          Drive, i proxied img & video tag request with a Service Worker that
-          added the authentication headers. Personally I find this so cool there
-          is so much power in the web as a platform !
+          Drive transparent to the codebase, i proxied requests made by the
+          browser for resources called by img & video tag with a Service Worker
+          that added the authentication headers. Personally I find this trick
+          quite cool, the web is actually an insanely powerful platform !
         </p>
       </section>
       <section className="mb-5">
@@ -65,16 +66,16 @@ export default function WebXrGoogleDriveClient() {
             talking about it
           </a>{" "}
           but I had a sudden health issue that prevented me from working on it
-          for a long time.
+          for the most part of a year.
         </p>
         <p className="mb-1.5">
-          I got back at work and I am currently working on some twist of this
-          idea. You will soon see a new entry on this portfolio, but you reached
-          the end for now !
+          Gladly I got better and back to work! I am currently working on some
+          twist of this idea. You will soon see a new entry on this portfolio,
+          but you reached the end for now !
         </p>
 
         <p>
-          <strong>Thank you for having bothered to read up to here !</strong>
+          <strong>Thank you for having read up to here !</strong>
         </p>
       </section>
       <section className="mb-5">
@@ -83,9 +84,12 @@ export default function WebXrGoogleDriveClient() {
           <li>Front: React</li>
           <li>3D: React-Three-Fiber, Three.js</li>
           <li>Back: Node.js, PostgreSQL, Hasura, GraphQL</li>
-          <li>
-            Infrastructure: Google Cloud Platfrom, Cloud SQL, Cloud Run, Google
-            Cloud Storage, Cloud Build, Terraform
+          <li className="flex">
+            <span className="flex-nowrap whitespace-nowrap mr-1">
+              Infrastructure:
+            </span>{" "}
+            Google Cloud Platfrom, Cloud SQL, Cloud Run, Google Cloud Storage,
+            Cloud Build, Terraform
           </li>
         </ul>
       </section>

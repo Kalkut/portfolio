@@ -4,7 +4,7 @@ export default function BuildingEditor() {
   return (
     <section className="px-4">
       <h2 className="text-xl font-semibold">Building Editor</h2>
-      <h3 className="italic mb-6">2018/2019 - Discontinued</h3>
+      <h3 className="italic mb-6">2018/2019</h3>
       <video
         className="mb-4"
         src="/videos/house_builder.mp4"
