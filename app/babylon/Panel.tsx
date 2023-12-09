@@ -84,8 +84,8 @@ function createPanelMesh(scene: Scene, width?: number, height?: number) {
 
 function attachAdvancedDynamicTexture(mesh: Mesh, width = 1, height = 1) {
   const defaultPixelSize = 1024;
-  const canvasWidth = defaultPixelSize * width;
-  const canvasHeight = defaultPixelSize * height;
+  const canvasWidth = defaultPixelSize;
+  const canvasHeight = (canvasWidth * height) / width;
   const advancedTexture = AdvancedDynamicTexture.CreateForMesh(
     mesh,
     canvasWidth,
@@ -96,25 +96,14 @@ function attachAdvancedDynamicTexture(mesh: Mesh, width = 1, height = 1) {
   backgroundRectangle.background = "black";
   backgroundRectangle.alpha = 0.5;
   backgroundRectangle.width = "100%";
-  backgroundRectangle.thickness = 10;
   backgroundRectangle.color = "white";
   advancedTexture.addControl(backgroundRectangle);
 
-  // const rectangle = new Rectangle();
-  // rectangle.width = "100%";
-  // rectangle.horizontalAlignment = Rectangle.HORIZONTAL_ALIGNMENT_LEFT;
-  // rectangle.verticalAlignment = Rectangle.VERTICAL_ALIGNMENT_TOP;
-
-  const fontSize = 256;
   const textBlock = new TextBlock();
   textBlock.textWrapping = true;
-  // textBlock.horizontalAlignment = TextBlock.HORIZONTAL_ALIGNMENT_LEFT;
-  // textBlock.verticalAlignment = TextBlock.VERTICAL_ALIGNMENT_TOP;
-  textBlock.fontSizeInPixels = fontSize;
-  textBlock.topInPixels = -0.5 * canvasHeight + fontSize;
-  // textBlock.leftInPixels = -0.4 * canvasWidth;
+  textBlock.fontSize = "15%";
+  textBlock.top = "-35%";
   textBlock.color = "white";
-  // textBlock.heightInPixels = 128;
   advancedTexture.addControl(textBlock);
 
   return textBlock;

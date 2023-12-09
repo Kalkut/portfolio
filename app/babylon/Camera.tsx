@@ -21,7 +21,7 @@ export function Camera() {
 function createArcRotateCamera(scene: Scene) {
   const initialAlpha = (3 * Math.PI) / 2;
   const initialBeta = (0.8 * Math.PI) / 2;
-  const angularRadius = Math.PI / 4;
+  const angularRadius = (1.2 * Math.PI) / 5;
   const camera = new ArcRotateCamera(
     "camera",
     0,
@@ -41,8 +41,8 @@ function createArcRotateCamera(scene: Scene) {
   camera.upperRadiusLimit = 0;
   camera.lowerAlphaLimit = initialAlpha - angularRadius;
   camera.upperAlphaLimit = initialAlpha + angularRadius;
-  camera.lowerBetaLimit = initialBeta - 0.35 * angularRadius;
-  camera.upperBetaLimit = initialBeta + 0.35 * angularRadius;
+  camera.lowerBetaLimit = initialBeta - 0.15 * angularRadius;
+  camera.upperBetaLimit = initialBeta + 0.15 * angularRadius;
 
   return () => {
     camera.dispose();
