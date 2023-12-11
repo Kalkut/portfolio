@@ -1,7 +1,10 @@
 {
-  "name": "website",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "author":  {
+    "name": "Bérenger Makita"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
