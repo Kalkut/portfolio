@@ -1,6 +1,7 @@
 # Portfolio (2023)
 
 ![image](https://github.com/Kalkut/portfolio/assets/8172006/b4aa2214-17dd-4e3a-b34c-05d7164b3dde)
+*⚠️ It is a rough Work in Progress ⚠️
 
 Well this is the codebase of my [portfolio](https://berengermakita.com/). It is a Next.js web app that uses Babylon.js for the 3D parts.
 
