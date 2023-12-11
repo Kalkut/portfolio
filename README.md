@@ -17,7 +17,3 @@ pnpm dev
 # or
 bun dev
 ```
-
-## Deploy
-
-I deploy on Cloudflare Pages, lots of people prefer Vercel to each their own I guess.
