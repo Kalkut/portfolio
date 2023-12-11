@@ -38,7 +38,7 @@ export default function Office() {
         </Panel>
         <Panel
           title="2017"
-          width={4.5}
+          width={5.5}
           height={1.75}
           rotation={new Vector3(Math.PI / 12, -Math.PI / 8)}
           position={new Vector3(-0.75, 1.05, -0.2)}
@@ -51,7 +51,7 @@ export default function Office() {
               "/videos/browser/navigation.mp4",
             ]}
             href="/projects/youtube-facebook-webvr-browser#description"
-            position={new Vector3(-1.25, -0.15, 0)}
+            position={new Vector3(-1.3, -0.15, 0)}
           />
 
           <Card
@@ -59,7 +59,7 @@ export default function Office() {
             title="Proto Social WebVR"
             preview="/pictures/social.jpg"
             href="/projects/social-webvr-prototype#description"
-            position={new Vector3(1, -0.15, 0)}
+            position={new Vector3(1.4, -0.15, 0)}
           />
         </Panel>
         <Panel
