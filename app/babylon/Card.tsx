@@ -28,7 +28,7 @@ export function Card({
 }: {
   href?: string;
   title: string;
-  preview: string;
+  preview: string | string[];
   type: "image" | "video";
   position?: Vector3;
   rotation?: Vector3;
@@ -66,17 +66,18 @@ export function Card({
   // Texture Load
   useEffect(() => {
     const isImg = type === "image";
-    const _texture = isImg
-      ? new Texture(preview, scene)
-      : new VideoTexture(
-          "Video preview",
-          preview,
-          scene,
-          undefined,
-          false,
-          undefined,
-          { muted: true },
-        );
+    const _texture =
+      isImg && preview
+        ? new Texture(typeof preview === "string" ? preview : preview[0], scene)
+        : new VideoTexture(
+            "Video preview",
+            preview,
+            scene,
+            undefined,
+            false,
+            undefined,
+            { muted: true },
+          );
 
     _texture.onLoadObservable.addOnce(() => {
       dispatch({ texture: _texture });

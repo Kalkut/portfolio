@@ -5,14 +5,16 @@ export default function SocialWebVrExperiment() {
     <section className="px-4 py-6">
       <h2 className="text-xl font-semibold">Social WebVR Experiment</h2>
       <h3 className="italic mb-6">2016</h3>
-      <video
-        className="mb-4"
-        src="/videos/social_webvr_experiment/multiplayer.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source
+          type="video/webm"
+          src="/videos/social_webvr_experiment/multiplayer.webm"
+        />
+        <source
+          type="video/mp4"
+          src="/videos/social_webvr_experiment/multiplayer.mp4"
+        />
+      </video>
       <p className="italic mb-9">
         Multiplayer editing : A user (
         <span className="text-pink-600">the pink sphere</span> here...) selects
@@ -75,15 +77,16 @@ export default function SocialWebVrExperiment() {
             watching YouTube videos.
           </p>
           <figure className="my-8">
-            <video
-              className="mb-4"
-              // className="w-2/5"
-              controls
-              muted
-              autoPlay
-              loop
-              src="/videos/social_webvr_experiment/youtube.mp4"
-            ></video>
+            <video className="mb-4" controls muted autoPlay loop>
+              <source
+                type="video/webm"
+                src="/videos/social_webvr_experiment/youtube.webm"
+              />
+              <source
+                type="video/mp4"
+                src="/videos/social_webvr_experiment/youtube.mp4"
+              />
+            </video>
             <figcaption>
               <em>
                 The user can drop a media &quot;screen&quot; on which they can
@@ -93,15 +96,16 @@ export default function SocialWebVrExperiment() {
             </figcaption>
           </figure>
           <p className="mb-1.5 flex flex-col-reverse">
-            <video
-              className="my-8"
-              // className="w-2/5"
-              controls
-              muted
-              autoPlay
-              loop
-              src="/videos/social_webvr_experiment/building.mp4"
-            ></video>
+            <video className="my-8" controls muted autoPlay loop>
+              <source
+                type="video/webm"
+                src="/videos/social_webvr_experiment/building.webm"
+              />
+              <source
+                type="video/mp4"
+                src="/videos/social_webvr_experiment/building.mp4"
+              />
+            </video>
             <span>
               The environment creation is done using primitive shapes likeboxes,
               sphere, cylinder and editing tools like extrusion and cropping

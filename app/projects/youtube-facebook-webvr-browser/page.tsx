@@ -5,14 +5,10 @@ export default function YouTubeFacebookWebVrProject() {
     <section className="px-4 py-6">
       <h2 className="text-xl font-semibold">YouTube/Facebook WebVR Browser</h2>
       <h3 className="italic mb-6">2017</h3>
-      <video
-        className="mb-4"
-        src="/videos/browser/navigation.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source type="video/webm" src="/videos/browser/navigation.webm" />
+        <source type="video/mp4" src="/videos/browser/navigation.mp4" />
+      </video>
       <p className="italic mb-9">
         Navigating YouTube subscriptions & Facebook pages with gaze interactions
       </p>
@@ -34,8 +30,16 @@ export default function YouTubeFacebookWebVrProject() {
               muted
               autoPlay
               loop
-              src="/videos/browser/browser_youtube_360_3D_videos.mp4"
-            ></video>
+            >
+              <source
+                type="video/webm"
+                src="/videos/browser/browser_youtube_360_3D_videos.webm"
+              />
+              <source
+                type="video/mp4"
+                src="/videos/browser/browser_youtube_360_3D_videos.mp4"
+              />
+            </video>
           </p>
           <p className="mb-1.5 flex flex-col-reverse">
             <video
@@ -45,8 +49,16 @@ export default function YouTubeFacebookWebVrProject() {
               muted
               autoPlay
               loop
-              src="/videos/browser/browser_facebook_pictures.mp4"
-            ></video>
+            >
+              <source
+                type="video/webm"
+                src="/videos/browser/browser_facebook_pictures.webm"
+              />
+              <source
+                type="video/mp4"
+                src="/videos/browser/browser_facebook_pictures.mp4"
+              />
+            </video>
             <span>
               One nice benefit of VR is that it makes both 360 & 3D videos much
               more engaging, so I added the possibility to only select those

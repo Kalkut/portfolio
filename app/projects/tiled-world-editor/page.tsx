@@ -5,14 +5,10 @@ export default function TiledWebVRWorldEditor() {
     <section className="px-4">
       <h2 className="text-xl font-semibold">Tiled WebVR World Editor</h2>
       <h3 className="italic mb-6">2017/2018</h3>
-      <video
-        className="mb-4"
-        src="/videos/ground.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source type="video/webm" src="/videos/ground.webm" />
+        <source type="video/mp4" src="/videos/ground.mp4" />
+      </video>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Context</h4>
         <p>

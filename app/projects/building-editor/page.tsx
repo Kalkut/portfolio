@@ -5,14 +5,11 @@ export default function BuildingEditor() {
     <section className="px-4">
       <h2 className="text-xl font-semibold">Building Editor</h2>
       <h3 className="italic mb-6">2018/2019</h3>
-      <video
-        className="mb-4"
-        src="/videos/house_builder.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source type="video/webm" src="/videos/house_builder.webm" />
+        <source type="video/mp4" src="/videos/house_builder.mp4" />
+      </video>
+
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Context</h4>
         <p>

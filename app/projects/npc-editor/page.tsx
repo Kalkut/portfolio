@@ -5,14 +5,10 @@ export default function NpcEditor() {
     <section className="px-4">
       <h2 className="text-xl font-semibold">NPC Editor</h2>
       <h3 className="italic mb-6">2018/2019</h3>
-      <video
-        className="mb-4"
-        src="/videos/npc/dialog_editor.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source type="video/webm" src="/videos/npc/dialog_editor.webm" />
+        <source type="video/mp4" src="/videos/npc/dialog_editor.mp4" />
+      </video>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Context</h4>
         <p>
@@ -37,14 +33,10 @@ export default function NpcEditor() {
           selectable by a player talking to the NPC
         </p>
         <figure className="my-8">
-          <video
-            className="mb-1.5"
-            controls
-            muted
-            autoPlay
-            loop
-            src="/videos/npc/animation_editor.mp4"
-          ></video>
+          <video className="mb-1.5" controls muted autoPlay loop>
+            <source type="video/webm" src="/videos/npc/animation_editor.webm" />
+            <source type="video/mp4" src="/videos/npc/animation_editor.mp4" />
+          </video>
           <figcaption>
             <em>
               I tested animation selection directly in 3d and dropped it because

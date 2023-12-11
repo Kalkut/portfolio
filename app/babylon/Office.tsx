@@ -29,7 +29,10 @@ export default function Office() {
             type="video"
             title="Social WebVR Experiment"
             href="/projects/social-webvr-experiment#description"
-            preview="/videos/social_webvr_experiment/multiplayer.mp4"
+            preview={[
+              "/videos/social_webvr_experiment/multiplayer.webm",
+              "/videos/social_webvr_experiment/multiplayer.mp4",
+            ]}
             position={new Vector3(0, -0.15, 0)}
           />
         </Panel>
@@ -43,7 +46,10 @@ export default function Office() {
           <Card
             type="video"
             title="YouTube/Facebook WebVR Browser"
-            preview="/videos/browser/navigation.mp4"
+            preview={[
+              "/videos/browser/navigation.webm",
+              "/videos/browser/navigation.mp4",
+            ]}
             href="/projects/youtube-facebook-webvr-browser#description"
             position={new Vector3(-1.25, -0.15, 0)}
           />
@@ -66,14 +72,17 @@ export default function Office() {
           <Card
             type="video"
             title="Tiled WebVR World Editor"
-            preview="/videos/ground.mp4"
+            preview={["/videos/ground.webm", "/videos/ground.mp4"]}
             href="/projects/tiled-world-editor#description"
             position={new Vector3(-1, -0.15, 0)}
           />
           <Card
             type="video"
             title="Spatial Reddit"
-            preview="/videos/reddit/reddit_inside.mp4"
+            preview={[
+              "/videos/reddit/reddit_inside.webm",
+              "/videos/reddit/reddit_inside.mp4",
+            ]}
             href="/projects/spatial-reddit#description"
             position={new Vector3(1, -0.15, 0)}
           />
@@ -88,7 +97,10 @@ export default function Office() {
           <Card
             type="video"
             title="WebxR City Builder"
-            preview="/videos/world/world_edition.mp4"
+            preview={[
+              "/videos/world/world_edition.webm",
+              "/videos/world/world_edition.mp4",
+            ]}
             href="/projects/webxr-city-builder#description"
             position={new Vector3(-2, -0.15, 0)}
           />
@@ -96,14 +108,20 @@ export default function Office() {
             type="video"
             title="NPC Editor"
             href="/projects/npc-editor#description"
-            preview="/videos/npc/dialog_editor.mp4"
+            preview={[
+              "/videos/npc/dialog_editor.webm",
+              "/videos/npc/dialog_editor.mp4",
+            ]}
             position={new Vector3(0, -0.15, 0)}
           />
           <Card
             type="video"
             title="Building Editor"
             href="/projects/building-editor#description"
-            preview="/videos/house_builder.mp4"
+            preview={[
+              "/videos/house_builder.webm",
+              "/videos/house_builder.mp4",
+            ]}
             position={new Vector3(2, -0.15, 0)}
           />
         </Panel>
@@ -118,14 +136,14 @@ export default function Office() {
           <Card
             type="video"
             title="WebXR Space Editor"
-            preview="/videos/environment.mp4"
+            preview={["/videos/environment.webm", "/videos/environment.mp4"]}
             href="/projects/webxr-space-editor#description"
             position={new Vector3(-0.65, -0.15, 0)}
           />
           <Card
             type="video"
             title="WebXR PDF Reader"
-            preview="/videos/pdf_reader.mp4"
+            preview={["/videos/pdf_reader.webm", "/videos/pdf_reader.mp4"]}
             href="/projects/webxr-pdf-reader#description"
             position={new Vector3(1, -0.15, 0)}
           />
@@ -142,7 +160,10 @@ export default function Office() {
             type="video"
             title="Google Drive WebXR Client"
             href="/projects/webxr-google-drive-client#description"
-            preview="/videos/google_drive_client.mp4"
+            preview={[
+              "/videos/google_drive_client.webm",
+              "/videos/google_drive_client.mp4",
+            ]}
             position={new Vector3(0, -0.15, 0)}
           />
         </Panel>

@@ -5,14 +5,10 @@ export default function WebXRCityBuilder() {
     <section className="px-4">
       <h2 className="text-xl font-semibold">WebXR City Builder</h2>
       <h3 className="italic mb-6">2018/2019</h3>
-      <video
-        className="mb-4"
-        src="/videos/world/world_edition.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source type="video/webm" src="/videos/world/world_edition.webm" />
+        <source type="video/mp4" src="/videos/world/world_edition.mp4" />
+      </video>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Context</h4>
         <p>
@@ -38,8 +34,10 @@ export default function WebXRCityBuilder() {
           muted
           autoPlay
           loop
-          src="/videos/world/world_vr.mp4"
-        ></video>
+        >
+          <source type="video/webm" src="/videos/world/world_vr.webm" />
+          <source type="video/mp4" src="/videos/world/world_vr.mp4" />
+        </video>
       </section>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Outcome</h4>

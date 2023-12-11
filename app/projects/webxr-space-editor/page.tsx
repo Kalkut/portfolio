@@ -5,14 +5,10 @@ export default function WebXrSpaceEditor() {
     <section className="px-4">
       <h2 className="text-xl font-semibold">WebXR Space Editor</h2>
       <h3 className="italic mb-6">2021</h3>
-      <video
-        className="mb-4"
-        src="/videos/environment.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source type="video/webm" src="/videos/environment.webm" />
+        <source type="video/mp4" src="/videos/environment.mp4" />
+      </video>
       <section className="mb-5">
         <h4 className="font-semibold mb-3">Context</h4>
         <p className="mb-2">
@@ -78,8 +74,10 @@ export default function WebXrSpaceEditor() {
             muted
             autoPlay
             loop
-            src="/videos/reddit_flat.mp4"
-          ></video>
+          >
+            <source type="video/webm" src="/videos/reddit_flat.webm" />
+            <source type="video/mp4" src="/videos/reddit_flat.mp4" />
+          </video>
           <figcaption>
             <em>
               Top posts on{" "}

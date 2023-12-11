@@ -5,14 +5,10 @@ export default function SpatialReddit() {
     <section className="px-4 py-6">
       <h2 className="text-xl font-semibold">Spatial Reddit</h2>
       <h3 className="italic mb-6">2018 - Discontinued</h3>
-      <video
-        className="mb-4"
-        src="/videos/reddit/reddit_inside.mp4"
-        controls
-        muted
-        autoPlay
-        loop
-      />
+      <video className="mb-4" controls muted autoPlay loop>
+        <source type="video/webm" src="/videos/reddit/reddit_inside.webm" />
+        <source type="video/mp4" src="/videos/reddit/reddit_inside.mp4" />
+      </video>
 
       <section className="mb-5">
         <section className="mb-6">
@@ -40,15 +36,16 @@ export default function SpatialReddit() {
             in more details
           </p>
 
-          <video
-            className="my-8"
-            // className="w-2/5"
-            controls
-            muted
-            autoPlay
-            loop
-            src="/videos/reddit/reddit_navigation.mp4"
-          ></video>
+          <video className="my-8" controls muted autoPlay loop>
+            <source
+              type="video/webm"
+              src="/videos/reddit/reddit_navigation.webm"
+            />
+            <source
+              type="video/mp4"
+              src="/videos/reddit/reddit_navigation.mp4"
+            />
+          </video>
         </section>
         <section className="mb-5">
           <h4 className="font-semibold mb-3">Outcome</h4>
